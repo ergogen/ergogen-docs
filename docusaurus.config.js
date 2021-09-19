@@ -55,7 +55,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
             items: [
               {
                 label: 'Documentation',
-                to: '/docs/getting-started',
+                to: '/ergogen-docs/',
               },
             ],
           },
