@@ -7,7 +7,8 @@ slug: /
 
 # Getting Started
 
-You can use ergogen either on the command line, or through the [web UI](https://zealot.hu/ergogen/).
+You can use ergogen either on the command line, or through the [web UI](https://zealot.hu/ergogen/).  
+A beta UI with live reloading is available as well [here](https://mveerd.github.io/ergogen-gui)
 
 ## Command line usage
 :::info
