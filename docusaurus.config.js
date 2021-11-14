@@ -7,7 +7,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
   title: 'Ergogen docs',
   tagline: 'Ergonomic keyboard layout generator',
   url: process.env.SITE_URL ?? 'https://ergogen.github.io',
-  baseUrl: process.env.BASE_URL ?? '/ergogen-docs/',
+  baseUrl: process.env.BASE_URL ?? '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
@@ -55,7 +55,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
             items: [
               {
                 label: 'Documentation',
-                to: process.env.BASE_URL ?? '/ergogen-docs/',
+                to: process.env.BASE_URL ?? '/',
               },
             ],
           },
