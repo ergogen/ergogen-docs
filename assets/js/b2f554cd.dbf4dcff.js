@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkergogen_docs=self.webpackChunkergogen_docs||[]).push([[477],{10:function(e){e.exports={blogPosts:[]}}}]);
