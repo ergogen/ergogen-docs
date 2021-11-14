@@ -6,12 +6,12 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 (module.exports = {
   title: 'Ergogen docs',
   tagline: 'Ergonomic keyboard layout generator',
-  url: process.env.SITE_URL ?? 'https://mveerd.github.io',
+  url: process.env.SITE_URL ?? 'https://ergogen.github.io',
   baseUrl: process.env.BASE_URL ?? '/ergogen-docs/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
-  organizationName: 'mveerd',
+  organizationName: 'ergogen',
   projectName: 'ergogen-docs',
 
   presets: [
@@ -23,7 +23,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
           sidebarPath: require.resolve('./sidebars.js'),
           routeBasePath: '/',
           // Please change this to your repo.
-          editUrl: 'https://github.com/mveerd/ergogen-docs/edit/main/website/',
+          editUrl: 'https://github.com/ergogen/ergogen-docs/edit/main/website/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
