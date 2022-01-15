@@ -5,11 +5,12 @@ sidebar_position: 3
 # Units
 
 We start with an optional `units` clause, where we can define units to use in relative calculations.  
-The three predefined ones are `u`, `cx`, and `cy`.
+The four predefined ones are `U`, `u`, `cx`, and `cy`.
 ```yaml
+U: 19.05 # 19.05 MX spacing
 u: 19 # 19mm MX spacing
 cx: 18 # 18mm Choc X spacing
-cY: 17 # 17mm Choc Y spacing
+cy: 17 # 17mm Choc Y spacing
 ```
 
 But we can add any other (or modify these predefined ones), or even use an existing measure in calculating a new value (for example, `double: 2 u`).
