@@ -6,9 +6,9 @@ sidebar_position: 4
 
 A point in this context refers to a 2D point `[x,y]` with a rotation/orientation `r` added in.
 These can be thought of as the middle points of the keycaps in a resulting keyboard layout, with an additional handling of the angle of the keycap.
+Points can also be used to position other footprints by using tags to filter points for various uses.
 
 What makes this generator "ergo" is the implicit focus on the column-stagger.
-Of course we could simulate the traditional row-stagger by defining everything with a 90 degree rotation, but that's really not the goal here.
 Since we're focusing on column-stagger, keys are laid out in columns, and a collection of columns is called a "zone".
 For example, we can define multiple, independent zones to make it easy to differentiate between the keywell and the thumb fan/cluster.
 
@@ -17,21 +17,29 @@ Points can be described as follows:
 ```yaml
 points:
     zones:
-        my_zone_name:
-            anchor:
-                ref: <point reference>
-                orient: num # default = 0
+        my_zone_name: # A unique key for each zone which will be used to refer to it
+            anchor: # Optional - Anchor to position the zone 
+                ref: <point reference> # Optional - Reference to another point to anchor to
+                orient: <num> # default = 0
                 shift: [x, y] # default = [0, 0]
+                rotate: <num> # default = 0
+                affect: <string> # default = xyr - Specifies which axis are affected by this anchor 
+            columns: 
+              column_name:
+                stagger: num # default = 0
+                spread: num # default = 19
                 rotate: num # default = 0
-                affect: string containing any of x, y, or r # default = xyr
-            columns:
-                column_name: <column def>
-                ...
+                origin: [x, y] # relative to center of column's first key, default = [0, 0]
+                rows:
+                  row_name: <key-specific key def> # Optional - Key properties set here apply to this colrow intersection 
+                key: <column-level key def> # Optional - Key properties set here apply to the whole column
+              second_column: <column def>
             rows:
-                row_name: <row-level key def>
-                ...
-            key: <zone-level key def>
-        ...
+                row_name: <row-level key def> # Optional - Key properties set here affect the whole row
+            key: <zone-level key def> # Optional - Key properties set here affect the whole zone
+        another_zone:
+          [...]
+    key: # Optional - Key properties set here affect all zones
 ```
 
 ## `zones`
@@ -39,7 +47,7 @@ points:
 We start with a `zones` clause, under which we can define the individual, named zones.
 
 ### `anchor`
-Anchors are used to, well, anchor the zone to something.  
+Anchors are used to anchor and shift zones around an origin 
 #### `ref`
 An anchor has `[0, 0]` origin with a 0 degree orientation by default, but it can be changed to any other pre-existing point using `ref`. *(Consequently, the first zone can't use a ref, because there isn't any yet.)*  
 
