@@ -26,9 +26,9 @@ points:
                 affect: <string> # default = xyr - Specifies which axis are affected by this anchor 
             columns: 
               column_name:
-                stagger: num # default = 0
-                spread: num # default = 19
-                rotate: num # default = 0
+                stagger: <num> # default = 0
+                spread: <num> # default = 19
+                rotate: <num> # default = 0
                 origin: [x, y] # relative to center of column's first key, default = [0, 0]
                 rows:
                   row_name: <key-specific key def> # Optional - Key properties set here apply to this colrow intersection 
