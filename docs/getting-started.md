@@ -7,8 +7,15 @@ slug: /
 
 # Getting Started
 
-You can use ergogen either on the command line, or through the [web UI](https://ergogen.xyz/).
-There is now also a more convenient (and soon to be transitioned to official) [alternate web UI](https://ergogen.cache.works/) by [Cache](https://github.com/MvEerd) that you should check out!
+Until there's a proper "Getting started" guide, try getting acquainted with ergogen by following these steps in order:
+
+1. Read the [docs](https://docs.ergogen.xyz). D'uuh. They're not complete by any measure, but should give you a fairly good idea what you're dealing with here.
+
+1. Try one of the web-based deployments ([official](https://ergogen.xyz); [unofficial](https://ergogen.cache.works/) but probably better and soon to be official) - no need to download the CLI unless you want to A) preview in-development features, B) use custom modifications, or C) contribute code. Click things, look at outputs; see if things start to make sense.
+
+1. Search the [`#ergogen`](https://github.com/topics/ergogen) topic on GitHub to look at (and reverse engineer) a variety of real life configs using ergogen. Pop them into the web UI, see what they do, tinker with them; things should start to make more and more sense.
+
+1. If a question persists after all of the above, feel free to ask it over on [Discord](https://discord.gg/nbKcAZB) and we'll do our best to help you out.
 
 ## Command line usage
 
