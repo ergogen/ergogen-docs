@@ -74,7 +74,7 @@ Now we can configure what we want to "export" as outlines from this phase, given
         - `middle` means an "ideal" version of the glue (meaning that instead of the `outline.glue` we defined above, we get `both` - `left` - `right`, so the _exact_ middle piece we would have needed to glue everything together
         - `both` means both sides, held together by the glue
         - `glue` is just the raw glue shape we defined above under `outline.glue`
-    - `tag: <array of tags>` : optional tags to filter which points to consider in this step, where tags can be specified as key-level attributes.
+    - `tags: <array of tags>` : optional tags to filter which points to consider in this step, where tags can be specified as key-level attributes.
     - `glue: <glue_name>` : the name of the glue to use, if applicable
     - `size: num | [num_x, num_y]` : the width/height of the rectangles to lay onto the points. Note that these values are added to the evaluation context as the variables `sx` and `sy`. So during a `keys` layout with a size of 18, for example, a relative shift of `[.5 sx, .5 sy]` actually means `[9, 9]` in mms.
     - `corner: num # default = 0)` : corner radius of the rectangles
