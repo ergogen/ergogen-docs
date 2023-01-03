@@ -62,9 +62,9 @@ There are several internal default values that are used when arranging [points](
     $default_autobind: 10
 ```
 
-:::caution
 While these can be modified directly within the `units` or `variables` section;
 they can only be reassigned using math involving the predefined units `U`, `u`, `cx`, and `cy`.
+:::caution
 Reassigning these defaults using user defined units/variables will not work.
 :::
 
