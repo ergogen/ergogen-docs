@@ -62,9 +62,12 @@ There are several internal default values that are used when arranging [points](
     $default_autobind: 10
 ```
 
+:::caution
 While these can be modified directly within the `units` or `variables` section;
 they can only be reassigned using math involving the predefined units `U`, `u`, `cx`, and `cy`.
 Reassigning these defaults using user defined units/variables will not work.
+:::
+
 For example, the following is valid (though probably unhelpful):
 ```yaml
 units:
@@ -89,5 +92,7 @@ units:
     $default_autobind: kx/4
 ```
 
+:::tip
 Since some of these internal default values are defined in terms of `u`,
 even if you aren't directly using `u`, you may find it helpful to redefine it.
+:::
