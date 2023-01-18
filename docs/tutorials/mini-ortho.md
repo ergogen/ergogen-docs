@@ -63,12 +63,121 @@ While this won't make a difference in this tutorial, in others it will.
 Putting our current config into the gui results in the following:
 TODO: image
 
-This is all we want for the finger keys, we are ready to move on to the thumb keys.
+This is all we want for the finger keys, so we are ready to move on to the thumb keys.
 
 ### Thumb keys
 
-TODO: description
-TODO: images from gui
+For our thumb keys, it is easiest to create a new zone, which we will name `thumb`.
+With this zone, we want to specify a position to start from, to fix where it is in relation to the finger keys.
+We do this using the `anchor` option.
+```yaml
+points:
+    zones:
+        fingers:
+            columns:
+                pinky:
+                ring:
+                middle:
+                index:
+                inner:
+            rows:
+                bottom:
+                home:
+                top:
+        thumb:
+            anchor:
+                ref: fingers_inner_bottom
+                shift: [0,-u]
+```
+This specifies that we want our first thumb key to be one `u` down from the `bottom` key in the `inner` column of the `fingers` zone.
+Here `u` is a default unit from ergogen that measure 19mm, and is the default spacing between keys.
+
+Inputting this config into the gui gives:
+TODO: image
+
+Our next step is to specify our second thumb key, which we do using `columns`.
+```yaml
+points:
+    zones:
+        fingers:
+            columns:
+                pinky:
+                ring:
+                middle:
+                index:
+                inner:
+            rows:
+                bottom:
+                home:
+                top:
+        thumb:
+            anchor:
+                ref: fingers_inner_bottom
+                shift: [0,-u]
+            columns:
+                tuck:
+                reach:
+```
+At this point the positions of all of our keys have been specified as we want.
+However, if we want to later refer to the position of our thumb keys, we would have to use names like `thumb_tuck_default`,
+as we did not specify any rows.
+We can override this behaviour by giving these keys names.
+```yaml
+points:
+    zones:
+        fingers:
+            columns:
+                pinky:
+                ring:
+                middle:
+                index:
+                inner:
+            rows:
+                bottom:
+                home:
+                top:
+        thumb:
+            anchor:
+                ref: fingers_inner_bottom
+                shift: [0,-u]
+            columns:
+                tuck:
+                    key:
+                        name: thumb_tuck
+                reach:
+                    key:
+                        name: thumb_reach
+```
+:::note
+The `name` option is a `key` level option, and thus must be nested within `key`.
+:::
+
+Since we aren't specifying any other information for the thumb keys, we can make our config more concise as follows:
+```yaml
+points:
+    zones:
+        fingers:
+            columns:
+                pinky:
+                ring:
+                middle:
+                index:
+                inner:
+            rows:
+                bottom:
+                home:
+                top:
+        thumb:
+            anchor:
+                ref: fingers_inner_bottom
+                shift: [0,-u]
+            columns:
+                tuck.key.name: thumb_tuck
+                reach.key.name: thumb_reach
+```
+
+The output from the gui now looks like:
+TODO: image
 
 ### Outline
 
