@@ -1,8 +1,36 @@
 ---
-sidebar_position: 4
+sidebar_position: 5
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 # Points
+
+
+
+<Tabs>
+<TabItem value="config" label="Config" default>
+
+```yaml
+points.zones.matrix:
+  something:
+  or_other:
+```
+
+</TabItem>
+<TabItem value="result" label="Result">
+
+![Example visualization](./assets/example_visualization.png)
+
+</TabItem>
+</Tabs>
+
+
+
+
+
+
 
 A point in this context refers to a 2D point `[x,y]` with a rotation/orientation `r` added in.
 These can be thought of as the middle points of the keycaps in a resulting keyboard layout, with an additional handling of the angle of the keycap.

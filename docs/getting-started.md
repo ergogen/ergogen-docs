@@ -7,7 +7,7 @@ slug: /
 
 # Getting Started
 
-Until there's a proper "Getting started" guide, try getting acquainted with ergogen by following these steps in order:
+Until there's a proper "Getting started" guide, try getting acquainted with Ergogen by following these steps in order:
 
 1. Read the [docs](https://docs.ergogen.xyz). D'uuh. They're not complete by any measure, but should give you a fairly good idea what you're dealing with here.
 

@@ -10,7 +10,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
   baseUrl: process.env.BASE_URL ?? '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/ergogen.png',
   organizationName: 'ergogen',
   projectName: 'ergogen-docs',
 
@@ -23,7 +23,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
           sidebarPath: require.resolve('./sidebars.js'),
           routeBasePath: '/',
           // Please change this to your repo.
-          editUrl: 'https://github.com/ergogen/ergogen-docs/edit/main/website/',
+          editUrl: 'https://github.com/ergogen/ergogen-docs/edit/main/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -42,7 +42,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
         title: 'Ergogen docs',
         logo: {
           alt: 'Ergogen docs logo',
-          src: 'img/logo.svg',
+          src: 'img/ergogen.png',
         },
         items: [
         ],
@@ -73,7 +73,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
             items: [
               {
                 label: 'Discord',
-                to: 'https://discord.gg/nbKcAZB',
+                to: 'http://discord.ergogen.xyz',
               },
             ],
           }

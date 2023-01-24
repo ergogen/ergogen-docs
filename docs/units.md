@@ -1,13 +1,15 @@
 ---
-sidebar_position: 3
+sidebar_position: 4
 ---
 
 # Units
 
-We start with an optional `units` clause, where we can define units to use in relative calculations.  
+In the optional `units` clause, we can define units to use in relative calculations.
+The alias `variables` also works the same way.
 The four predefined ones are `U`, `u`, `cx`, and `cy`.
+
 ```yaml
-U: 19.05 # 19.05 MX spacing
+U: 19.05 # 19.05mm MX spacing
 u: 19 # 19mm MX spacing
 cx: 18 # 18mm Choc X spacing
 cy: 17 # 17mm Choc Y spacing

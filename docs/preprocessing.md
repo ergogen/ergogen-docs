@@ -55,6 +55,7 @@ This consists of the following steps:
     parent:
         $extends: grandparent
         $args: [value1]
+        $skip: true
     child:
         $extends: parent
         $args: [,value2]
