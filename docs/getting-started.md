@@ -15,7 +15,7 @@ Until there's a proper "Getting started" guide, try getting acquainted with Ergo
 
 1. Search the [`#ergogen`](https://github.com/topics/ergogen) topic on GitHub to look at (and reverse engineer) a variety of real life configs using ergogen. Pop them into the web UI, see what they do, tinker with them; things should start to make more and more sense.
 
-1. If a question persists after all of the above, feel free to ask it over on [Discord](https://discord.gg/nbKcAZB) and we'll do our best to help you out.
+1. If a question persists after all of the above, feel free to ask it over on [Discord](http://discord.ergogen.xyz) and we'll do our best to help you out.
 
 ## Command line usage
 

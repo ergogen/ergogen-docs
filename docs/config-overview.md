@@ -18,7 +18,7 @@ cases: <case config...> #optional
 pcbs: <pcb config...> #optional
 ```
 
-### [`meta`](./meta.md)
+### [`meta`](./metadata.md)
 Provides a place to declare metadata about the board, the author, the required Ergogen version, etc.
 
 ### [`units`](./units.md)
@@ -40,6 +40,6 @@ Used to configure KiCAD PCB templates.
 <hr/>
 
 In the following sections we'll have an in-depth look into each of these.
-There's also a completely separate [preprocessing](preprocessing.md) step to help reduce unnecessary repetition.
+There's also a completely separate [preprocessing](./preprocessing.md) step to help reduce unnecessary repetition.
 Of course, if the declarative nature of the config is still not terse enough (despite the preprocessor, the built-in YAML references, and the Ergogen-based inheritance detailed later), there's nothing stopping you from writing code that generates the config.
 It brings the game to yet another abstraction level higher, so that you can use branching, loops, and parametric functions to compose a "drier" keyboard definition.
