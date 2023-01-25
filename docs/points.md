@@ -7,37 +7,184 @@ import TabItem from '@theme/TabItem';
 
 # Points
 
+A point in this context refers to a 2D point `[x,y]` with a rotation/orientation `r` and some extra metadata added in.
+These can be thought of as the middle points of the keycaps in a resulting keyboard layout, with the additional handling of the angle of the keycap, plus, again, some metadata (like names, row/column information, custom variables, etc.).
+Points can later be used to position shapes (to form board outlines) and PCB footprints – optionally by using filters to use only a subset.
 
+But thing would get pretty tedious if we had to lay out each point manually, and downright horrific if any kind of trigonometry came into play!
+So Ergogen tries to do as much of the heavy lifting as it can while providing more comfortable declaration alternatives.
+
+
+
+
+
+## Anchors
+
+One of these alternatives is the use of anchors, where we don't *directly* specify a point's `x`/`y`/`r` coordinates, but compute it from an already existing starting point through some translation/rotation.
+Anchors try to be very flexible, and it naturally comes with some complexity – but remember that they are just another way to declare a point.
+
+Anchors can be parsed from the following data types:
+
+- A ***string*** means it's just a reference to an already existing point with that name, without any further modifications.
+
+- An ***array*** means it's a multipart anchor (or, multi-anchor), each item being an anchor itself, recursively.
+  But why would we need multiple anchors for a single point, you might ask.
+  Because each sub-anchor becomes the starting point of the next.
+  
+  :::tip
+  Think of this as a kind of treasure hunt where you first have to find a clue to know where the next clue will be.
+  Through this *follow-the-dots* functionality, you can get to many interesting, exact locations on your board without having to actually calculate where that is.
+  :::
+
+- An ***object*** means it's a full anchor declaration.
+
+
+### Attributes
+
+In a full, object anchor declaration, the following fields can be used:
+
+- **`ref`** is the starting point from where the anchor will perform its additional modifications.
+  This field is parsed as an anchor itself, recursively.
+  So in its easiest form, it can be a string to designate an existing starting point by name (more on names later), but it can also be a full nested anchor if so desired.
+
+- **`aggregate`** is an alternative to `ref` when the combination of several locations is required as the starting point for further adjustment.
+  They're mutually exclusive, so we can use either `ref` or `aggregate` in any given anchor.
+  The aggregate field is always an object, containing:
+
+  - a `parts` array containing the sub-anchors we want to aggregate, and 
+  - a `method` string to indicate *how* we want to aggregate them.
+
+  The only method implemented so far is `average`, which is the default anyway, so the `method` can be omitted for now.
+
+  :::note
+  Averaging applies to both the `x`/`y` coordinates *and* the `r` rotation.
+  :::
+
+- **`orient`** is a kind of pre-rotation, meaning it happens before any shifting is done.
+  The value can be:
+
+  - a ***number***, in which case that number is simply added to the current rotation of the in-progress point calculation; or
+  - a ***sub-anchor***, in which case the point "turns towards" the point we reference (meaning its rotations will be exactly set to hit that point if a line was projected from it).
+
+  <br/>
+
+  :::note
+  Orienting only affects the `r` value of the point we're calculating.
+  :::
+
+- **`shift`** is for shifting (or, more formally, translating) the point on the XY plane.
+  The value can be:
+
+  - a ***array of exactly two numbers***, specifying the `x` and `y` shift, respectively, or
+  - a single ***number***, which would get parsed as `[number, number]`.
+
+  <br/>
+
+  :::caution
+  It's important that shifting happens according to the current rotation of the point.
+  By default, a 0° rotation is "looking right", so that positive `x` shifts move it to the right, negative `x` shifts to the left, positive `y` shifts up, negative `y` shifts down.
+  But if r=90° (so the point is "looking down", as rotation works clockwise), then a positive `x` shift would move it downward.
+  :::
+
+- **`rotate`** is a kind of *post*-rotation after shifting, as opposed to how `orient` was the *pre*-rotation.
+  Otherwise, it works the exact same way.
+
+- **`affect`** can specify an override to what fields we want to affect during the current anchor calculation.
+  The value can be:
+
+  - a ***string*** containing a subset of the characters `x`, `y`, or `r` only; or
+  - an ***array*** containing a subset of the one letter strings `"x"`, `"y"`, or `"r"` only.
+
+  <br/>
+
+  :::tip
+  Let's say you have a point rotated 45° and want to shift is "visually right". You could either reset its rotation via `orient`, then shift, then re-set the rotation with `rotate`; or, you could do the shift and then declare that this whole anchor only `affect`s `"x"`.
+
+  Or let's say you want to copy the rotation of another, already existing point into your current anchor calculation. You can do so using a multi-anchor (see above), `ref`erencing the existing point in the second part, and then declare `affect: "r"` to prevent it from overwriting anything else, thereby setting just the rotation.
+  :::
+
+- **`resist`** states that we do **not** want the special treatment usually afforded to mirrored points.
+  We'll get to [mirroring](#mirroring) in a second, but from an anchor perspective, all we need to know is that shifting and orienting/rotating are all mirrored for mirrored points, to keep things symmetric.
+  So if we specify a shift of `[1, 1]`, what actually gets applied is `[-1, 1]`, and rotations are counter-clockwise in those cases, too.
+  But if we don't want this behavior, (say, because PCB footprints go on the same, upward facing side of the board, no matter the half) we can `resist` it.
+
+
+
+
+
+### Examples
+
+<details><summary>Basic</summary>
+<p>
+
+To get the gist of what's happening, take a look at the following anchor config and its visualization.
+It first orients itself -45°, so 45° counter-clockwise.
+Then it shift "one to the right", but since its orientation is now -45°, "right" means along the diagonal line.
+Once it gets there (at [&radic;2/2, &radic;2/2], on the unit circle), it finally rotates another -135°, which (when added to its existing rotation) results is -180°, so it's looking "left".
 
 <Tabs>
 <TabItem value="config" label="Config" default>
 
 ```yaml
-points.zones.matrix:
-  something:
-  or_other:
+anchor:
+  orient: -45
+  shift: [1, 0]
+  rotate: -135
 ```
 
 </TabItem>
-<TabItem value="result" label="Result">
+<TabItem value="visualization" label="Visualization">
 
-![Example visualization](./assets/example_visualization.png)
+![Anchor basic example](./assets/anchor_basic.png)
 
 </TabItem>
 </Tabs>
 
+</p>
+</details>
+
+
+
+## Zones
+
+### Layout basics
+
+### Inheritance
+
+### Columns
+
+### Rows
+
+### Keys
+
+## Rotation
+
+## Mirroring
 
 
 
 
 
 
-A point in this context refers to a 2D point `[x,y]` with a rotation/orientation `r` added in.
-These can be thought of as the middle points of the keycaps in a resulting keyboard layout, with an additional handling of the angle of the keycap.
-Points can also be used to position other footprints by using tags to filter points for various uses.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 What makes this generator "ergo" is the implicit focus on the column-stagger.
-Since we're focusing on column-stagger, keys are laid out in columns, and a collection of columns is called a "zone".
+And since we're focusing on column-stagger, keys are laid out in columns, and a collection of columns is called a "zone".
 For example, we can define multiple, independent zones to make it easy to differentiate between the keywell and the thumb fan/cluster.
 
 Points can be described as follows:
