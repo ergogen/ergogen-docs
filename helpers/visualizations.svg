@@ -1,0 +1,1456 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
+   sodipodi:docname="visualizations.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:snap-object-midpoints="true"
+     inkscape:snap-midpoints="true"
+     showguides="true"
+     inkscape:guide-bbox="true"
+     inkscape:object-paths="true"
+     inkscape:snap-intersection-paths="true"
+     inkscape:object-nodes="true"
+     inkscape:snap-smooth-nodes="true"
+     inkscape:snap-text-baseline="true"
+     inkscape:zoom="1.2262093"
+     inkscape:cx="274.01521"
+     inkscape:cy="1427.1625"
+     inkscape:window-width="1920"
+     inkscape:window-height="1080"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1"
+     inkscape:snap-nodes="true"
+     inkscape:snap-global="true">
+    <sodipodi:guide
+       position="133.50387,202.61879"
+       orientation="0,-1"
+       id="guide4240" />
+    <sodipodi:guide
+       position="133.50387,202.61879"
+       orientation="1,0"
+       id="guide4242" />
+    <sodipodi:guide
+       position="50.369228,122.40706"
+       orientation="0,-1"
+       id="guide4272" />
+    <sodipodi:guide
+       position="50.369228,122.40706"
+       orientation="1,0"
+       id="guide4274" />
+    <sodipodi:guide
+       position="60.090328,183.88286"
+       orientation="0,-1"
+       id="guide35416" />
+    <sodipodi:guide
+       position="60.090331,141.14296"
+       orientation="0,-1"
+       id="guide35418" />
+    <sodipodi:guide
+       position="43.860444,116.48161"
+       orientation="0,-1"
+       id="guide1617" />
+    <sodipodi:guide
+       position="69.81144,97.745683"
+       orientation="0,-1"
+       id="guide8784" />
+    <sodipodi:guide
+       position="-57.604653,266.741"
+       orientation="0,-1"
+       id="guide77386" />
+    <sodipodi:guide
+       position="-58.734016,264.42983"
+       orientation="0,-1"
+       id="guide107628" />
+    <sodipodi:guide
+       position="-57.604653,266.741"
+       orientation="1,0"
+       id="guide107630" />
+    <sodipodi:guide
+       position="27.073669,31.353822"
+       orientation="0,-1"
+       id="guide1200" />
+    <sodipodi:guide
+       position="97.637518,31.353822"
+       orientation="1,0"
+       id="guide13009" />
+    <sodipodi:guide
+       position="79.293989,-14.01045"
+       orientation="0,-1"
+       id="guide13011" />
+    <sodipodi:guide
+       position="72.175156,-32.745765"
+       orientation="0,-1"
+       id="guide13013" />
+    <sodipodi:guide
+       position="79.293989,-78.110662"
+       orientation="0,-1"
+       id="guide13015" />
+  </sodipodi:namedview>
+  <defs
+     id="defs2" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="display:inline;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.56161;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect35442"
+       width="159.08908"
+       height="140.39491"
+       x="15.395259"
+       y="85.659592"
+       inkscape:label="frame"
+       inkscape:export-filename="/home/zealot/zed/ergogen-docs/docs/assets/anchor_follow.png"
+       inkscape:export-xdpi="95.800003"
+       inkscape:export-ydpi="95.800003" />
+    <rect
+       style="display:inline;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.490244;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect35442-1"
+       width="121.03609"
+       height="140.61536"
+       x="37.119469"
+       y="304.80298"
+       inkscape:label="frame"
+       inkscape:export-filename="/home/zealot/zed/ergogen-docs/docs/assets/anchor_average.png"
+       inkscape:export-xdpi="104.9274"
+       inkscape:export-ydpi="104.9274" />
+    <rect
+       style="display:inline;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.572615;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect35442-7"
+       width="211.0275"
+       height="110.02942"
+       x="-275.26883"
+       y="-85.716019"
+       inkscape:label="frame"
+       inkscape:export-filename="/home/zealot/zed/ergogen-docs/docs/assets/coords.png"
+       inkscape:export-xdpi="96.290001"
+       inkscape:export-ydpi="96.290001" />
+    <ellipse
+       style="fill:none;fill-opacity:0.331148;stroke:#b5b5b5;stroke-width:0.469157;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="path1863"
+       cx="69.81131"
+       cy="113.11642"
+       rx="19.203609"
+       ry="18.508234"
+       inkscape:export-filename="/home/zealot/zed/ergogen-docs/docs/assets/anchor_follow.png"
+       inkscape:export-xdpi="95.800003"
+       inkscape:export-ydpi="95.800003" />
+    <path
+       style="fill:none;stroke:#b5b5b5;stroke-width:0.469157;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M 50.369226,131.85307 89.253652,94.381216"
+       id="path2102"
+       inkscape:export-filename="/home/zealot/zed/ergogen-docs/docs/assets/anchor_follow.png"
+       inkscape:export-xdpi="95.800003"
+       inkscape:export-ydpi="95.800003" />
+    <path
+       style="fill:none;stroke:#b5b5b5;stroke-width:0.469157;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M 50.369226,94.381216 89.253652,131.85307"
+       id="path2104"
+       inkscape:export-filename="/home/zealot/zed/ergogen-docs/docs/assets/anchor_follow.png"
+       inkscape:export-xdpi="95.800003"
+       inkscape:export-ydpi="95.800003" />
+    <path
+       style="fill:none;stroke:#b5b5b5;stroke-width:0.469;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M 50.369226,94.381216 H 89.253652 V 131.85307 H 50.369226 Z"
+       id="path2371"
+       inkscape:export-filename="/home/zealot/zed/ergogen-docs/docs/assets/anchor_follow.png"
+       inkscape:export-xdpi="95.800003"
+       inkscape:export-ydpi="95.800003" />
+    <path
+       style="fill:none;stroke:#b5b5b5;stroke-width:0.469157;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 69.811312,113.11642 19.44234,9.4e-4"
+       id="path2508"
+       inkscape:export-filename="/home/zealot/zed/ergogen-docs/docs/assets/anchor_follow.png"
+       inkscape:export-xdpi="95.800003"
+       inkscape:export-ydpi="95.800003" />
+    <path
+       style="fill:none;stroke:#b5b5b5;stroke-width:0.469157;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 69.811312,113.11642 1.2e-4,-18.735204"
+       id="path2510"
+       inkscape:export-filename="/home/zealot/zed/ergogen-docs/docs/assets/anchor_follow.png"
+       inkscape:export-xdpi="95.800003"
+       inkscape:export-ydpi="95.800003" />
+    <path
+       style="fill:none;stroke:#b5b5b5;stroke-width:0.469157;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M 69.811432,113.11715 H 50.369226"
+       id="path2512"
+       inkscape:export-filename="/home/zealot/zed/ergogen-docs/docs/assets/anchor_follow.png"
+       inkscape:export-xdpi="95.800003"
+       inkscape:export-ydpi="95.800003" />
+    <path
+       style="fill:none;stroke:#b5b5b5;stroke-width:0.469157;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 69.811432,113.11715 v 18.73592"
+       id="path2514"
+       inkscape:export-filename="/home/zealot/zed/ergogen-docs/docs/assets/anchor_follow.png"
+       inkscape:export-xdpi="95.800003"
+       inkscape:export-ydpi="95.800003" />
+    <g
+       id="g1241"
+       transform="matrix(0.00292155,-0.46914779,0.46914779,0.00292155,52.121495,143.50904)"
+       inkscape:export-filename="/home/zealot/zed/ergogen-docs/docs/assets/anchor_follow.png"
+       inkscape:export-xdpi="95.800003"
+       inkscape:export-ydpi="95.800003"
+       inkscape:transform-center-x="0.02872298"
+       inkscape:transform-center-y="-0.5312886">
+      <circle
+         style="fill:none;stroke:#000000;stroke-width:1.6;stroke-linecap:round"
+         id="path1053"
+         cx="64.985443"
+         cy="37.208195"
+         r="5.1319785" />
+      <rect
+         style="fill:none;stroke:#000000;stroke-width:1.6;stroke-linecap:round"
+         id="rect1157"
+         width="4.4659085"
+         height="0.63357967"
+         x="67.849419"
+         y="36.891403" />
+    </g>
+    <ellipse
+       style="fill:none;fill-opacity:0.331148;stroke:#b5b5b5;stroke-width:0.469157;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="path1863-5"
+       cx="114.06155"
+       cy="113.11642"
+       rx="19.203609"
+       ry="18.508234"
+       inkscape:export-filename="/home/zealot/zed/ergogen-docs/docs/assets/anchor_follow.png"
+       inkscape:export-xdpi="95.800003"
+       inkscape:export-ydpi="95.800003" />
+    <path
+       style="fill:none;stroke:#b5b5b5;stroke-width:0.469157;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M 94.61945,131.85306 133.50387,94.381211"
+       id="path2102-3"
+       inkscape:export-filename="/home/zealot/zed/ergogen-docs/docs/assets/anchor_follow.png"
+       inkscape:export-xdpi="95.800003"
+       inkscape:export-ydpi="95.800003" />
+    <path
+       style="fill:none;stroke:#b5b5b5;stroke-width:0.469157;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 94.61945,94.381211 38.88442,37.471849"
+       id="path2104-5"
+       inkscape:export-filename="/home/zealot/zed/ergogen-docs/docs/assets/anchor_follow.png"
+       inkscape:export-xdpi="95.800003"
+       inkscape:export-ydpi="95.800003" />
+    <path
+       style="fill:none;stroke:#b5b5b5;stroke-width:0.469157;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 94.61945,94.381211 h 38.88442 V 131.85306 H 94.61945 Z"
+       id="path2371-6"
+       inkscape:export-filename="/home/zealot/zed/ergogen-docs/docs/assets/anchor_follow.png"
+       inkscape:export-xdpi="95.800003"
+       inkscape:export-ydpi="95.800003" />
+    <path
+       style="fill:none;stroke:#b5b5b5;stroke-width:0.469157;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 114.06154,113.11641 19.44233,9.4e-4"
+       id="path2508-2"
+       inkscape:export-filename="/home/zealot/zed/ergogen-docs/docs/assets/anchor_follow.png"
+       inkscape:export-xdpi="95.800003"
+       inkscape:export-ydpi="95.800003" />
+    <path
+       style="fill:none;stroke:#b5b5b5;stroke-width:0.469157;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 114.06154,113.11641 1.2e-4,-18.735199"
+       id="path2510-9"
+       inkscape:export-filename="/home/zealot/zed/ergogen-docs/docs/assets/anchor_follow.png"
+       inkscape:export-xdpi="95.800003"
+       inkscape:export-ydpi="95.800003" />
+    <path
+       style="fill:none;stroke:#b5b5b5;stroke-width:0.469157;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M 114.06166,113.11714 H 94.61945"
+       id="path2512-1"
+       inkscape:export-filename="/home/zealot/zed/ergogen-docs/docs/assets/anchor_follow.png"
+       inkscape:export-xdpi="95.800003"
+       inkscape:export-ydpi="95.800003" />
+    <path
+       style="fill:none;stroke:#b5b5b5;stroke-width:0.469157;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 114.06166,113.11714 v 18.73592"
+       id="path2514-2"
+       inkscape:export-filename="/home/zealot/zed/ergogen-docs/docs/assets/anchor_follow.png"
+       inkscape:export-xdpi="95.800003"
+       inkscape:export-ydpi="95.800003" />
+    <g
+       id="g126905"
+       inkscape:transform-center-x="0.064213892"
+       inkscape:transform-center-y="0.0056541037"
+       transform="rotate(-93.647531,114.07745,113.06956)"
+       inkscape:export-filename="/home/zealot/zed/ergogen-docs/docs/assets/anchor_follow.png"
+       inkscape:export-xdpi="95.800003"
+       inkscape:export-ydpi="95.800003">
+      <circle
+         style="fill:none;stroke:#000000;stroke-width:0.750651;stroke-linecap:round"
+         id="path1053-0"
+         cx="5.5219083"
+         cy="160.52605"
+         r="2.4077029"
+         transform="rotate(-43.266586)" />
+      <rect
+         style="fill:none;stroke:#ff2626;stroke-width:0.750651;stroke-linecap:round;stroke-opacity:1"
+         id="rect1157-9"
+         width="2.0952117"
+         height="0.29724827"
+         x="6.8655591"
+         y="160.37743"
+         transform="rotate(-43.266586)" />
+    </g>
+    <ellipse
+       style="fill:none;fill-opacity:0.331148;stroke:#b5b5b5;stroke-width:0.469157;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="path1863-3"
+       cx="69.81131"
+       cy="155.85631"
+       rx="19.203609"
+       ry="18.508234"
+       inkscape:export-filename="/home/zealot/zed/ergogen-docs/docs/assets/anchor_follow.png"
+       inkscape:export-xdpi="95.800003"
+       inkscape:export-ydpi="95.800003" />
+    <path
+       style="fill:none;stroke:#b5b5b5;stroke-width:0.469157;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M 50.369228,174.59294 89.253656,137.1211"
+       id="path2102-6"
+       inkscape:export-filename="/home/zealot/zed/ergogen-docs/docs/assets/anchor_follow.png"
+       inkscape:export-xdpi="95.800003"
+       inkscape:export-ydpi="95.800003" />
+    <path
+       style="fill:none;stroke:#b5b5b5;stroke-width:0.469157;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 50.369228,137.1211 38.884428,37.47184"
+       id="path2104-0"
+       inkscape:export-filename="/home/zealot/zed/ergogen-docs/docs/assets/anchor_follow.png"
+       inkscape:export-xdpi="95.800003"
+       inkscape:export-ydpi="95.800003" />
+    <path
+       style="fill:none;stroke:#b5b5b5;stroke-width:0.469;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 50.369228,137.1211 h 38.884428 v 37.47184 H 50.369228 Z"
+       id="path2371-62"
+       inkscape:export-filename="/home/zealot/zed/ergogen-docs/docs/assets/anchor_follow.png"
+       inkscape:export-xdpi="95.800003"
+       inkscape:export-ydpi="95.800003" />
+    <path
+       style="fill:none;stroke:#b5b5b5;stroke-width:0.469157;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 69.811316,155.8563 19.44234,9.4e-4"
+       id="path2508-6"
+       inkscape:export-filename="/home/zealot/zed/ergogen-docs/docs/assets/anchor_follow.png"
+       inkscape:export-xdpi="95.800003"
+       inkscape:export-ydpi="95.800003" />
+    <path
+       style="fill:none;stroke:#b5b5b5;stroke-width:0.469157;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 69.811316,155.8563 1.2e-4,-18.7352"
+       id="path2510-1"
+       inkscape:export-filename="/home/zealot/zed/ergogen-docs/docs/assets/anchor_follow.png"
+       inkscape:export-xdpi="95.800003"
+       inkscape:export-ydpi="95.800003" />
+    <path
+       style="fill:none;stroke:#b5b5b5;stroke-width:0.469157;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M 69.811436,155.85704 H 50.369228"
+       id="path2512-8"
+       inkscape:export-filename="/home/zealot/zed/ergogen-docs/docs/assets/anchor_follow.png"
+       inkscape:export-xdpi="95.800003"
+       inkscape:export-ydpi="95.800003" />
+    <path
+       style="fill:none;stroke:#b5b5b5;stroke-width:0.469157;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 69.811436,155.85704 v 18.7359"
+       id="path2514-7"
+       inkscape:export-filename="/home/zealot/zed/ergogen-docs/docs/assets/anchor_follow.png"
+       inkscape:export-xdpi="95.800003"
+       inkscape:export-ydpi="95.800003" />
+    <ellipse
+       style="fill:none;fill-opacity:0.331148;stroke:#b5b5b5;stroke-width:0.469157;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="path1863-5-2"
+       cx="114.06155"
+       cy="155.85629"
+       rx="19.203609"
+       ry="18.508234"
+       inkscape:export-filename="/home/zealot/zed/ergogen-docs/docs/assets/anchor_follow.png"
+       inkscape:export-xdpi="95.800003"
+       inkscape:export-ydpi="95.800003" />
+    <path
+       style="fill:none;stroke:#b5b5b5;stroke-width:0.469157;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M 94.619446,174.59292 133.50387,137.12107"
+       id="path2102-3-3"
+       inkscape:export-filename="/home/zealot/zed/ergogen-docs/docs/assets/anchor_follow.png"
+       inkscape:export-xdpi="95.800003"
+       inkscape:export-ydpi="95.800003" />
+    <path
+       style="fill:none;stroke:#b5b5b5;stroke-width:0.469157;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 94.619446,137.12107 38.884424,37.47185"
+       id="path2104-5-7"
+       inkscape:export-filename="/home/zealot/zed/ergogen-docs/docs/assets/anchor_follow.png"
+       inkscape:export-xdpi="95.800003"
+       inkscape:export-ydpi="95.800003" />
+    <path
+       style="fill:none;stroke:#b5b5b5;stroke-width:0.469157;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 94.619446,137.12107 h 38.884424 v 37.47185 H 94.619446 Z"
+       id="path2371-6-5"
+       inkscape:export-filename="/home/zealot/zed/ergogen-docs/docs/assets/anchor_follow.png"
+       inkscape:export-xdpi="95.800003"
+       inkscape:export-ydpi="95.800003" />
+    <path
+       style="fill:none;stroke:#b5b5b5;stroke-width:0.469157;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 114.06154,155.85627 19.44233,9.4e-4"
+       id="path2508-2-9"
+       inkscape:export-filename="/home/zealot/zed/ergogen-docs/docs/assets/anchor_follow.png"
+       inkscape:export-xdpi="95.800003"
+       inkscape:export-ydpi="95.800003" />
+    <path
+       style="fill:none;stroke:#b5b5b5;stroke-width:0.469157;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 114.06154,155.85627 1.2e-4,-18.7352"
+       id="path2510-9-2"
+       inkscape:export-filename="/home/zealot/zed/ergogen-docs/docs/assets/anchor_follow.png"
+       inkscape:export-xdpi="95.800003"
+       inkscape:export-ydpi="95.800003" />
+    <path
+       style="fill:none;stroke:#b5b5b5;stroke-width:0.469157;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M 114.06166,155.857 H 94.619446"
+       id="path2512-1-2"
+       inkscape:export-filename="/home/zealot/zed/ergogen-docs/docs/assets/anchor_follow.png"
+       inkscape:export-xdpi="95.800003"
+       inkscape:export-ydpi="95.800003" />
+    <path
+       style="fill:none;stroke:#b5b5b5;stroke-width:0.469157;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 114.06166,155.857 v 18.73592"
+       id="path2514-2-8"
+       inkscape:export-filename="/home/zealot/zed/ergogen-docs/docs/assets/anchor_follow.png"
+       inkscape:export-xdpi="95.800003"
+       inkscape:export-ydpi="95.800003" />
+    <path
+       style="fill:none;stroke:#b6b6b6;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 100.48215,168.94319 H 133.50387 94.619446"
+       id="path3097-2"
+       inkscape:export-filename="/home/zealot/zed/ergogen-docs/docs/assets/anchor_follow.png"
+       inkscape:export-xdpi="95.800003"
+       inkscape:export-ydpi="95.800003" />
+    <path
+       style="fill:none;stroke:#b6b6b6;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 127.6418,142.77019 h 5.86207 -38.884424"
+       id="path3099-9"
+       inkscape:export-filename="/home/zealot/zed/ergogen-docs/docs/assets/anchor_follow.png"
+       inkscape:export-xdpi="95.800003"
+       inkscape:export-ydpi="95.800003" />
+    <g
+       id="g132211"
+       inkscape:transform-center-x="-0.043086649"
+       inkscape:transform-center-y="0.51750285"
+       transform="rotate(-89.331977,127.62041,142.77399)"
+       inkscape:export-filename="/home/zealot/zed/ergogen-docs/docs/assets/anchor_follow.png"
+       inkscape:export-xdpi="95.800003"
+       inkscape:export-ydpi="95.800003">
+      <circle
+         style="fill:none;stroke:#000000;stroke-width:0.750651;stroke-linecap:round"
+         id="path1053-0-7"
+         cx="-126.9649"
+         cy="-143.39932"
+         r="2.4077029"
+         transform="rotate(179.73793)"
+         inkscape:export-filename="/home/zealot/zed/ergogen-docs/docs/assets/anchor_basic.png"
+         inkscape:export-xdpi="95.800003"
+         inkscape:export-ydpi="95.800003" />
+      <rect
+         style="fill:none;stroke:#ff2626;stroke-width:0.750651;stroke-linecap:round;stroke-opacity:1"
+         id="rect1157-9-3"
+         width="2.0952117"
+         height="0.29724827"
+         x="-125.62124"
+         y="-143.54794"
+         transform="rotate(179.73793)"
+         inkscape:export-filename="/home/zealot/zed/ergogen-docs/docs/assets/anchor_basic.png"
+         inkscape:export-xdpi="95.800003"
+         inkscape:export-ydpi="95.800003" />
+    </g>
+    <ellipse
+       style="fill:none;fill-opacity:0.331148;stroke:#b5b5b5;stroke-width:0.469157;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="path1863-5-2-0"
+       cx="69.811325"
+       cy="199.25362"
+       rx="19.203609"
+       ry="18.508234"
+       inkscape:export-filename="/home/zealot/zed/ergogen-docs/docs/assets/anchor_follow.png"
+       inkscape:export-xdpi="95.800003"
+       inkscape:export-ydpi="95.800003" />
+    <path
+       style="fill:none;stroke:#b5b5b5;stroke-width:0.469157;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M 50.369228,217.99024 89.253652,180.51839"
+       id="path2102-3-3-6"
+       inkscape:export-filename="/home/zealot/zed/ergogen-docs/docs/assets/anchor_follow.png"
+       inkscape:export-xdpi="95.800003"
+       inkscape:export-ydpi="95.800003" />
+    <path
+       style="fill:none;stroke:#b5b5b5;stroke-width:0.469157;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 50.369228,180.51839 38.884424,37.47185"
+       id="path2104-5-7-2"
+       inkscape:export-filename="/home/zealot/zed/ergogen-docs/docs/assets/anchor_follow.png"
+       inkscape:export-xdpi="95.800003"
+       inkscape:export-ydpi="95.800003" />
+    <path
+       style="fill:none;stroke:#b5b5b5;stroke-width:0.469157;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 50.369228,180.51839 h 38.884424 v 37.47185 H 50.369228 Z"
+       id="path2371-6-5-9"
+       inkscape:export-filename="/home/zealot/zed/ergogen-docs/docs/assets/anchor_follow.png"
+       inkscape:export-xdpi="95.800003"
+       inkscape:export-ydpi="95.800003" />
+    <path
+       style="fill:none;stroke:#b5b5b5;stroke-width:0.469157;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 69.811322,199.25359 19.44233,9.4e-4"
+       id="path2508-2-9-9"
+       inkscape:export-filename="/home/zealot/zed/ergogen-docs/docs/assets/anchor_follow.png"
+       inkscape:export-xdpi="95.800003"
+       inkscape:export-ydpi="95.800003" />
+    <path
+       style="fill:none;stroke:#b5b5b5;stroke-width:0.469157;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 69.811322,199.25359 1.2e-4,-18.7352"
+       id="path2510-9-2-0"
+       inkscape:export-filename="/home/zealot/zed/ergogen-docs/docs/assets/anchor_follow.png"
+       inkscape:export-xdpi="95.800003"
+       inkscape:export-ydpi="95.800003" />
+    <path
+       style="fill:none;stroke:#b5b5b5;stroke-width:0.469157;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M 69.811442,199.25432 H 50.369228"
+       id="path2512-1-2-8"
+       inkscape:export-filename="/home/zealot/zed/ergogen-docs/docs/assets/anchor_follow.png"
+       inkscape:export-xdpi="95.800003"
+       inkscape:export-ydpi="95.800003" />
+    <path
+       style="fill:none;stroke:#b5b5b5;stroke-width:0.469157;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 69.811442,199.25432 v 18.73592"
+       id="path2514-2-8-1"
+       inkscape:export-filename="/home/zealot/zed/ergogen-docs/docs/assets/anchor_follow.png"
+       inkscape:export-xdpi="95.800003"
+       inkscape:export-ydpi="95.800003" />
+    <path
+       style="fill:none;stroke:#b6b6b6;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 56.231932,212.34051 H 89.253652 50.369228"
+       id="path3097-2-3"
+       inkscape:export-filename="/home/zealot/zed/ergogen-docs/docs/assets/anchor_follow.png"
+       inkscape:export-xdpi="95.800003"
+       inkscape:export-ydpi="95.800003" />
+    <path
+       style="fill:none;stroke:#b6b6b6;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 83.391582,186.16751 h 5.86207 -38.884424"
+       id="path3099-9-1"
+       inkscape:export-filename="/home/zealot/zed/ergogen-docs/docs/assets/anchor_follow.png"
+       inkscape:export-xdpi="95.800003"
+       inkscape:export-ydpi="95.800003" />
+    <path
+       style="fill:none;stroke:#b6b6b6;stroke-width:0.256;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 88.369908,197.28158 0.883744,1.97295 -5.86207,-13.08702"
+       id="path3099-9-1-3"
+       inkscape:export-filename="/home/zealot/zed/ergogen-docs/docs/assets/anchor_follow.png"
+       inkscape:export-xdpi="95.800003"
+       inkscape:export-ydpi="95.800003" />
+    <path
+       style="fill:none;stroke:#b6b6b6;stroke-width:0.256;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 68.927578,197.28064 0.883744,1.97295 -5.86207,-13.08702"
+       id="path3099-9-1-3-2"
+       inkscape:export-filename="/home/zealot/zed/ergogen-docs/docs/assets/anchor_follow.png"
+       inkscape:export-xdpi="95.800003"
+       inkscape:export-ydpi="95.800003" />
+    <path
+       style="fill:none;stroke:#b6b6b6;stroke-width:0.256;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 113.1778,197.28064 0.88374,1.97295 -5.86207,-13.08702"
+       id="path3099-9-1-3-2-1"
+       inkscape:export-filename="/home/zealot/zed/ergogen-docs/docs/assets/anchor_follow.png"
+       inkscape:export-xdpi="95.800003"
+       inkscape:export-ydpi="95.800003" />
+    <path
+       style="fill:none;stroke:#b6b6b6;stroke-width:0.256;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 132.62013,197.28158 0.88374,1.97295 -5.86207,-13.08702"
+       id="path3099-9-1-3-2-1-5"
+       inkscape:export-filename="/home/zealot/zed/ergogen-docs/docs/assets/anchor_follow.png"
+       inkscape:export-xdpi="95.800003"
+       inkscape:export-ydpi="95.800003" />
+    <g
+       id="g132215"
+       inkscape:transform-center-x="-0.0055359584"
+       inkscape:transform-center-y="0.5488109"
+       transform="rotate(-89.455998,63.982077,186.16072)"
+       inkscape:export-filename="/home/zealot/zed/ergogen-docs/docs/assets/anchor_follow.png"
+       inkscape:export-xdpi="95.800003"
+       inkscape:export-ydpi="95.800003">
+      <circle
+         style="fill:none;stroke:#ff2626;stroke-width:0.750651;stroke-linecap:round;stroke-opacity:1"
+         id="path1053-0-7-1"
+         cx="-63.097057"
+         cy="-186.45712"
+         r="2.4077029"
+         transform="rotate(179.73793)"
+         inkscape:export-filename="/home/zealot/zed/ergogen-docs/docs/assets/anchor_basic.png"
+         inkscape:export-xdpi="95.800003"
+         inkscape:export-ydpi="95.800003" />
+      <rect
+         style="fill:none;stroke:#000000;stroke-width:0.750651;stroke-linecap:round;stroke-opacity:1"
+         id="rect1157-9-3-0"
+         width="2.0952117"
+         height="0.29724827"
+         x="-61.753399"
+         y="-186.60574"
+         transform="rotate(179.73793)"
+         inkscape:export-filename="/home/zealot/zed/ergogen-docs/docs/assets/anchor_basic.png"
+         inkscape:export-xdpi="95.800003"
+         inkscape:export-ydpi="95.800003" />
+    </g>
+    <ellipse
+       style="fill:none;fill-opacity:0.331148;stroke:#b5b5b5;stroke-width:0.469157;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="path1863-5-2-0-8"
+       cx="114.06155"
+       cy="199.25362"
+       rx="19.203609"
+       ry="18.508234"
+       inkscape:export-filename="/home/zealot/zed/ergogen-docs/docs/assets/anchor_follow.png"
+       inkscape:export-xdpi="95.800003"
+       inkscape:export-ydpi="95.800003" />
+    <path
+       style="fill:none;stroke:#b5b5b5;stroke-width:0.469157;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M 94.619447,217.99024 133.50387,180.51839"
+       id="path2102-3-3-6-7"
+       inkscape:export-filename="/home/zealot/zed/ergogen-docs/docs/assets/anchor_follow.png"
+       inkscape:export-xdpi="95.800003"
+       inkscape:export-ydpi="95.800003" />
+    <path
+       style="fill:none;stroke:#b5b5b5;stroke-width:0.469157;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 94.619447,180.51839 38.884423,37.47185"
+       id="path2104-5-7-2-2"
+       inkscape:export-filename="/home/zealot/zed/ergogen-docs/docs/assets/anchor_follow.png"
+       inkscape:export-xdpi="95.800003"
+       inkscape:export-ydpi="95.800003" />
+    <path
+       style="fill:none;stroke:#b5b5b5;stroke-width:0.469157;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 94.619447,180.51839 h 38.884423 v 37.47185 H 94.619447 Z"
+       id="path2371-6-5-9-8"
+       inkscape:export-filename="/home/zealot/zed/ergogen-docs/docs/assets/anchor_follow.png"
+       inkscape:export-xdpi="95.800003"
+       inkscape:export-ydpi="95.800003" />
+    <path
+       style="fill:none;stroke:#b5b5b5;stroke-width:0.469157;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 114.06154,199.25359 19.44233,9.4e-4"
+       id="path2508-2-9-9-2"
+       inkscape:export-filename="/home/zealot/zed/ergogen-docs/docs/assets/anchor_follow.png"
+       inkscape:export-xdpi="95.800003"
+       inkscape:export-ydpi="95.800003" />
+    <path
+       style="fill:none;stroke:#b5b5b5;stroke-width:0.469157;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 114.06154,199.25359 1.2e-4,-18.7352"
+       id="path2510-9-2-0-9"
+       inkscape:export-filename="/home/zealot/zed/ergogen-docs/docs/assets/anchor_follow.png"
+       inkscape:export-xdpi="95.800003"
+       inkscape:export-ydpi="95.800003" />
+    <path
+       style="fill:none;stroke:#b5b5b5;stroke-width:0.469157;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M 114.06166,199.25432 H 94.619447"
+       id="path2512-1-2-8-9"
+       inkscape:export-filename="/home/zealot/zed/ergogen-docs/docs/assets/anchor_follow.png"
+       inkscape:export-xdpi="95.800003"
+       inkscape:export-ydpi="95.800003" />
+    <path
+       style="fill:none;stroke:#b5b5b5;stroke-width:0.469157;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 114.06166,199.25432 v 18.73592"
+       id="path2514-2-8-1-6"
+       inkscape:export-filename="/home/zealot/zed/ergogen-docs/docs/assets/anchor_follow.png"
+       inkscape:export-xdpi="95.800003"
+       inkscape:export-ydpi="95.800003" />
+    <path
+       style="fill:none;stroke:#b6b6b6;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 100.48215,212.34051 H 133.50387 94.619447"
+       id="path3097-2-3-0"
+       inkscape:export-filename="/home/zealot/zed/ergogen-docs/docs/assets/anchor_follow.png"
+       inkscape:export-xdpi="95.800003"
+       inkscape:export-ydpi="95.800003" />
+    <path
+       style="fill:none;stroke:#b6b6b6;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 127.6418,186.16751 h 5.86207 -38.884423"
+       id="path3099-9-1-2"
+       inkscape:export-filename="/home/zealot/zed/ergogen-docs/docs/assets/anchor_follow.png"
+       inkscape:export-xdpi="95.800003"
+       inkscape:export-ydpi="95.800003" />
+    <g
+       id="g1829-7"
+       transform="rotate(-113.76191,85.347798,171.23289)"
+       inkscape:transform-center-x="-0.033915715"
+       inkscape:transform-center-y="0.36908836"
+       inkscape:export-filename="/home/zealot/zed/ergogen-docs/docs/assets/anchor_follow.png"
+       inkscape:export-xdpi="95.800003"
+       inkscape:export-ydpi="95.800003">
+      <circle
+         style="fill:none;stroke:#000000;stroke-width:0.750651;stroke-linecap:round"
+         id="path1053-0-7-1-6"
+         cx="-61.675259"
+         cy="-186.46257"
+         r="2.4077029"
+         transform="rotate(179.73793)"
+         inkscape:export-filename="/home/zealot/zed/ergogen-docs/docs/assets/anchor_basic.png"
+         inkscape:export-xdpi="95.800003"
+         inkscape:export-ydpi="95.800003" />
+      <rect
+         style="fill:none;stroke:#ff2626;stroke-width:0.750651;stroke-linecap:round;stroke-opacity:1"
+         id="rect1157-9-3-0-1"
+         width="2.0952117"
+         height="0.29724827"
+         x="-60.3316"
+         y="-186.61119"
+         transform="rotate(179.73793)"
+         inkscape:export-filename="/home/zealot/zed/ergogen-docs/docs/assets/anchor_basic.png"
+         inkscape:export-xdpi="95.800003"
+         inkscape:export-ydpi="95.800003" />
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:6.35px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="21.694592"
+       y="113.11714"
+       id="text5752"
+       inkscape:export-filename="/home/zealot/zed/ergogen-docs/docs/assets/anchor_follow.png"
+       inkscape:export-xdpi="95.800003"
+       inkscape:export-ydpi="95.800003"><tspan
+         sodipodi:role="line"
+         id="tspan5750"
+         style="font-size:6.35px;stroke-width:0.264583"
+         x="21.694592"
+         y="113.11714">0. Start</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:6.35px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="138.5834"
+       y="113.11714"
+       id="text5752-5"
+       inkscape:export-filename="/home/zealot/zed/ergogen-docs/docs/assets/anchor_follow.png"
+       inkscape:export-xdpi="95.800003"
+       inkscape:export-ydpi="95.800003"><tspan
+         sodipodi:role="line"
+         id="tspan5750-6"
+         style="font-size:6.35px;stroke-width:0.264583"
+         x="138.5834"
+         y="113.11714">1. Orient</tspan></text>
+    <ellipse
+       style="fill:none;fill-opacity:0.331148;stroke:#b5b5b5;stroke-width:0.469157;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="path1863-4"
+       cx="69.57283"
+       cy="375.1102"
+       rx="19.203609"
+       ry="18.508234"
+       inkscape:export-filename="/home/zealot/zed/ergogen-docs/docs/assets/anchor_average.png"
+       inkscape:export-xdpi="104.9274"
+       inkscape:export-ydpi="104.9274" />
+    <path
+       style="fill:none;stroke:#b5b5b5;stroke-width:0.469157;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 50.130739,393.84684 38.88442,-37.47185"
+       id="path2102-0"
+       inkscape:export-filename="/home/zealot/zed/ergogen-docs/docs/assets/anchor_average.png"
+       inkscape:export-xdpi="104.9274"
+       inkscape:export-ydpi="104.9274" />
+    <path
+       style="fill:none;stroke:#b5b5b5;stroke-width:0.469157;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 50.130739,356.37499 38.88442,37.47185"
+       id="path2104-6"
+       inkscape:export-filename="/home/zealot/zed/ergogen-docs/docs/assets/anchor_average.png"
+       inkscape:export-xdpi="104.9274"
+       inkscape:export-ydpi="104.9274" />
+    <path
+       style="fill:none;stroke:#b5b5b5;stroke-width:0.469;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 50.130739,356.37499 h 38.88442 v 37.47185 h -38.88442 z"
+       id="path2371-2"
+       inkscape:export-filename="/home/zealot/zed/ergogen-docs/docs/assets/anchor_average.png"
+       inkscape:export-xdpi="104.9274"
+       inkscape:export-ydpi="104.9274" />
+    <path
+       style="fill:none;stroke:#b5b5b5;stroke-width:0.469157;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 69.572819,375.11019 19.44234,9.4e-4"
+       id="path2508-9"
+       inkscape:export-filename="/home/zealot/zed/ergogen-docs/docs/assets/anchor_average.png"
+       inkscape:export-xdpi="104.9274"
+       inkscape:export-ydpi="104.9274" />
+    <path
+       style="fill:none;stroke:#b5b5b5;stroke-width:0.469157;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 69.572819,375.11019 1.2e-4,-18.7352"
+       id="path2510-90"
+       inkscape:export-filename="/home/zealot/zed/ergogen-docs/docs/assets/anchor_average.png"
+       inkscape:export-xdpi="104.9274"
+       inkscape:export-ydpi="104.9274" />
+    <path
+       style="fill:none;stroke:#b5b5b5;stroke-width:0.469157;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 69.572939,375.11092 h -19.4422"
+       id="path2512-81"
+       inkscape:export-filename="/home/zealot/zed/ergogen-docs/docs/assets/anchor_average.png"
+       inkscape:export-xdpi="104.9274"
+       inkscape:export-ydpi="104.9274" />
+    <path
+       style="fill:none;stroke:#b5b5b5;stroke-width:0.469157;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 69.572939,375.11092 v 18.73592"
+       id="path2514-3"
+       inkscape:export-filename="/home/zealot/zed/ergogen-docs/docs/assets/anchor_average.png"
+       inkscape:export-xdpi="104.9274"
+       inkscape:export-ydpi="104.9274" />
+    <g
+       id="g1241-1"
+       transform="matrix(0.00292155,-0.46914779,0.46914779,0.00292155,51.883009,405.50281)"
+       inkscape:export-filename="/home/zealot/zed/ergogen-docs/docs/assets/anchor_average.png"
+       inkscape:export-xdpi="104.9274"
+       inkscape:export-ydpi="104.9274"
+       inkscape:transform-center-x="0.02872298"
+       inkscape:transform-center-y="-0.5312886">
+      <circle
+         style="fill:none;stroke:#000000;stroke-width:1.6;stroke-linecap:round"
+         id="path1053-1"
+         cx="64.985443"
+         cy="37.208195"
+         r="5.1319785" />
+      <rect
+         style="fill:none;stroke:#000000;stroke-width:1.6;stroke-linecap:round"
+         id="rect1157-0"
+         width="4.4659085"
+         height="0.63357967"
+         x="67.849419"
+         y="36.891403" />
+    </g>
+    <g
+       id="g1241-1-0"
+       transform="matrix(0.46915201,-0.00213915,0.00213915,0.46915201,19.845264,357.78003)"
+       inkscape:export-filename="/home/zealot/zed/ergogen-docs/docs/assets/anchor_average.png"
+       inkscape:export-xdpi="104.9274"
+       inkscape:export-ydpi="104.9274"
+       inkscape:transform-center-x="-0.53086985"
+       inkscape:transform-center-y="-0.028890762"
+       style="fill:none;fill-opacity:1;stroke:#52b413;stroke-opacity:1">
+      <circle
+         style="fill:none;fill-opacity:1;stroke:#52b413;stroke-width:1.6;stroke-linecap:round;stroke-opacity:1"
+         id="path1053-1-4"
+         cx="64.985443"
+         cy="37.208195"
+         r="5.1319785" />
+      <rect
+         style="fill:none;fill-opacity:1;stroke:#52b413;stroke-width:1.6;stroke-linecap:round;stroke-opacity:1"
+         id="rect1157-0-6"
+         width="4.4659085"
+         height="0.63357967"
+         x="67.849419"
+         y="36.891403" />
+    </g>
+    <g
+       id="g1241-1-0-2"
+       transform="matrix(-0.46915201,-0.00213915,-0.00213915,0.46915201,119.34408,357.79364)"
+       inkscape:export-filename="/home/zealot/zed/ergogen-docs/docs/assets/anchor_average.png"
+       inkscape:export-xdpi="104.9274"
+       inkscape:export-ydpi="104.9274"
+       inkscape:transform-center-x="0.53086969"
+       inkscape:transform-center-y="-0.028890762"
+       style="fill:none;fill-opacity:1;stroke:#0589de;stroke-opacity:1">
+      <circle
+         style="fill:none;fill-opacity:1;stroke:#0589de;stroke-width:1.6;stroke-linecap:round;stroke-opacity:1"
+         id="path1053-1-4-6"
+         cx="64.985443"
+         cy="37.208195"
+         r="5.1319785" />
+      <rect
+         style="fill:none;fill-opacity:1;stroke:#0589de;stroke-width:1.6;stroke-linecap:round;stroke-opacity:1"
+         id="rect1157-0-6-7"
+         width="4.4659085"
+         height="0.63357967"
+         x="67.849419"
+         y="36.891403" />
+    </g>
+    <ellipse
+       style="fill:none;fill-opacity:0.331148;stroke:#b5b5b5;stroke-width:0.469157;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="path1863-4-5"
+       cx="69.334351"
+       cy="420.47473"
+       rx="19.203609"
+       ry="18.508234"
+       inkscape:export-filename="/home/zealot/zed/ergogen-docs/docs/assets/anchor_average.png"
+       inkscape:export-xdpi="104.9274"
+       inkscape:export-ydpi="104.9274" />
+    <path
+       style="fill:none;stroke:#b5b5b5;stroke-width:0.469157;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M 49.892257,439.21138 88.776672,401.73953"
+       id="path2102-0-6"
+       inkscape:export-filename="/home/zealot/zed/ergogen-docs/docs/assets/anchor_average.png"
+       inkscape:export-xdpi="104.9274"
+       inkscape:export-ydpi="104.9274" />
+    <path
+       style="fill:none;stroke:#b5b5b5;stroke-width:0.469157;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 49.892257,401.73953 38.884415,37.47185"
+       id="path2104-6-9"
+       inkscape:export-filename="/home/zealot/zed/ergogen-docs/docs/assets/anchor_average.png"
+       inkscape:export-xdpi="104.9274"
+       inkscape:export-ydpi="104.9274" />
+    <path
+       style="fill:none;stroke:#b5b5b5;stroke-width:0.469;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 49.892257,401.73953 h 38.884415 v 37.47185 H 49.892257 Z"
+       id="path2371-2-8"
+       inkscape:export-filename="/home/zealot/zed/ergogen-docs/docs/assets/anchor_average.png"
+       inkscape:export-xdpi="104.9274"
+       inkscape:export-ydpi="104.9274" />
+    <path
+       style="fill:none;stroke:#b5b5b5;stroke-width:0.469157;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 69.334332,420.47473 19.44234,9.4e-4"
+       id="path2508-9-7"
+       inkscape:export-filename="/home/zealot/zed/ergogen-docs/docs/assets/anchor_average.png"
+       inkscape:export-xdpi="104.9274"
+       inkscape:export-ydpi="104.9274" />
+    <path
+       style="fill:none;stroke:#b5b5b5;stroke-width:0.469157;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 69.334332,420.47473 1.2e-4,-18.7352"
+       id="path2510-90-2"
+       inkscape:export-filename="/home/zealot/zed/ergogen-docs/docs/assets/anchor_average.png"
+       inkscape:export-xdpi="104.9274"
+       inkscape:export-ydpi="104.9274" />
+    <path
+       style="fill:none;stroke:#b5b5b5;stroke-width:0.469157;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M 69.334452,420.47546 H 49.892257"
+       id="path2512-81-8"
+       inkscape:export-filename="/home/zealot/zed/ergogen-docs/docs/assets/anchor_average.png"
+       inkscape:export-xdpi="104.9274"
+       inkscape:export-ydpi="104.9274" />
+    <path
+       style="fill:none;stroke:#b5b5b5;stroke-width:0.469157;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 69.334452,420.47546 v 18.73592"
+       id="path2514-3-2"
+       inkscape:export-filename="/home/zealot/zed/ergogen-docs/docs/assets/anchor_average.png"
+       inkscape:export-xdpi="104.9274"
+       inkscape:export-ydpi="104.9274" />
+    <g
+       id="g1241-1-9"
+       transform="matrix(0.00292155,0.46914779,0.46914779,-0.00292155,51.688348,371.58742)"
+       inkscape:export-filename="/home/zealot/zed/ergogen-docs/docs/assets/anchor_average.png"
+       inkscape:export-xdpi="104.9274"
+       inkscape:export-ydpi="104.9274"
+       inkscape:transform-center-x="0.02872298"
+       inkscape:transform-center-y="0.53129212"
+       style="fill:none;fill-opacity:1;stroke:#ff2626;stroke-opacity:1">
+      <circle
+         style="fill:none;fill-opacity:1;stroke:#ff2626;stroke-width:1.6;stroke-linecap:round;stroke-opacity:1"
+         id="path1053-1-9"
+         cx="64.985443"
+         cy="37.208195"
+         r="5.1319785" />
+      <rect
+         style="fill:none;fill-opacity:1;stroke:#ff2626;stroke-width:1.6;stroke-linecap:round;stroke-opacity:1"
+         id="rect1157-0-60"
+         width="4.4659085"
+         height="0.63357967"
+         x="67.849419"
+         y="36.891403" />
+    </g>
+    <g
+       id="g1241-1-0-27"
+       transform="matrix(0.46915201,-0.00213915,0.00213915,0.46915201,19.606782,403.14457)"
+       inkscape:export-filename="/home/zealot/zed/ergogen-docs/docs/assets/anchor_average.png"
+       inkscape:export-xdpi="104.9274"
+       inkscape:export-ydpi="104.9274"
+       inkscape:transform-center-x="-0.53086985"
+       inkscape:transform-center-y="-0.028890762"
+       style="fill:none;fill-opacity:1;stroke:#52b413;stroke-opacity:1">
+      <circle
+         style="fill:none;fill-opacity:1;stroke:#52b413;stroke-width:1.6;stroke-linecap:round;stroke-opacity:1"
+         id="path1053-1-4-61"
+         cx="64.985443"
+         cy="37.208195"
+         r="5.1319785" />
+      <rect
+         style="fill:none;fill-opacity:1;stroke:#52b413;stroke-width:1.6;stroke-linecap:round;stroke-opacity:1"
+         id="rect1157-0-6-3"
+         width="4.4659085"
+         height="0.63357967"
+         x="67.849419"
+         y="36.891403" />
+    </g>
+    <g
+       id="g1241-1-0-2-2"
+       transform="matrix(-0.46915201,-0.00213915,-0.00213915,0.46915201,119.1056,403.15818)"
+       inkscape:export-filename="/home/zealot/zed/ergogen-docs/docs/assets/anchor_average.png"
+       inkscape:export-xdpi="104.9274"
+       inkscape:export-ydpi="104.9274"
+       inkscape:transform-center-x="0.53086969"
+       inkscape:transform-center-y="-0.028890762"
+       style="fill:none;fill-opacity:1;stroke:#0589de;stroke-opacity:1">
+      <circle
+         style="fill:none;fill-opacity:1;stroke:#0589de;stroke-width:1.6;stroke-linecap:round;stroke-opacity:1"
+         id="path1053-1-4-6-1"
+         cx="64.985443"
+         cy="37.208195"
+         r="5.1319785" />
+      <rect
+         style="fill:none;fill-opacity:1;stroke:#0589de;stroke-width:1.6;stroke-linecap:round;stroke-opacity:1"
+         id="rect1157-0-6-7-5"
+         width="4.4659085"
+         height="0.63357967"
+         x="67.849419"
+         y="36.891403" />
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:6.35px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="97.399033"
+       y="375.11093"
+       id="text5752-0"
+       inkscape:export-filename="/home/zealot/zed/ergogen-docs/docs/assets/anchor_average.png"
+       inkscape:export-xdpi="104.9274"
+       inkscape:export-ydpi="104.9274"><tspan
+         sodipodi:role="line"
+         id="tspan5750-5"
+         style="font-size:6.35px;stroke-width:0.264583"
+         x="97.399033"
+         y="375.11093">1. Average</tspan></text>
+    <ellipse
+       style="fill:none;fill-opacity:0.331148;stroke:#b5b5b5;stroke-width:0.469157;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="path1863-4-9"
+       cx="69.811317"
+       cy="329.71725"
+       rx="19.203609"
+       ry="18.508234"
+       inkscape:export-filename="/home/zealot/zed/ergogen-docs/docs/assets/anchor_average.png"
+       inkscape:export-xdpi="104.9274"
+       inkscape:export-ydpi="104.9274" />
+    <path
+       style="fill:none;stroke:#b5b5b5;stroke-width:0.469157;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 50.369229,348.45387 38.88442,-37.47185"
+       id="path2102-0-9"
+       inkscape:export-filename="/home/zealot/zed/ergogen-docs/docs/assets/anchor_average.png"
+       inkscape:export-xdpi="104.9274"
+       inkscape:export-ydpi="104.9274" />
+    <path
+       style="fill:none;stroke:#b5b5b5;stroke-width:0.469157;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 50.369229,310.98202 38.88442,37.47186"
+       id="path2104-6-1"
+       inkscape:export-filename="/home/zealot/zed/ergogen-docs/docs/assets/anchor_average.png"
+       inkscape:export-xdpi="104.9274"
+       inkscape:export-ydpi="104.9274" />
+    <path
+       style="fill:none;stroke:#b5b5b5;stroke-width:0.469;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 50.369229,310.98202 h 38.88442 v 37.47186 h -38.88442 z"
+       id="path2371-2-4"
+       inkscape:export-filename="/home/zealot/zed/ergogen-docs/docs/assets/anchor_average.png"
+       inkscape:export-xdpi="104.9274"
+       inkscape:export-ydpi="104.9274" />
+    <path
+       style="fill:none;stroke:#b5b5b5;stroke-width:0.469157;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 69.811309,329.71722 19.44234,9.4e-4"
+       id="path2508-9-9"
+       inkscape:export-filename="/home/zealot/zed/ergogen-docs/docs/assets/anchor_average.png"
+       inkscape:export-xdpi="104.9274"
+       inkscape:export-ydpi="104.9274" />
+    <path
+       style="fill:none;stroke:#b5b5b5;stroke-width:0.469157;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 69.811309,329.71722 1.2e-4,-18.7352"
+       id="path2510-90-1"
+       inkscape:export-filename="/home/zealot/zed/ergogen-docs/docs/assets/anchor_average.png"
+       inkscape:export-xdpi="104.9274"
+       inkscape:export-ydpi="104.9274" />
+    <path
+       style="fill:none;stroke:#b5b5b5;stroke-width:0.469157;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 69.811429,329.71795 h -19.4422"
+       id="path2512-81-0"
+       inkscape:export-filename="/home/zealot/zed/ergogen-docs/docs/assets/anchor_average.png"
+       inkscape:export-xdpi="104.9274"
+       inkscape:export-ydpi="104.9274" />
+    <path
+       style="fill:none;stroke:#b5b5b5;stroke-width:0.469157;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 69.811429,329.71795 v 18.73593"
+       id="path2514-3-7"
+       inkscape:export-filename="/home/zealot/zed/ergogen-docs/docs/assets/anchor_average.png"
+       inkscape:export-xdpi="104.9274"
+       inkscape:export-ydpi="104.9274" />
+    <g
+       id="g1241-1-0-0"
+       transform="matrix(0.46915201,-0.00213915,0.00213915,0.46915201,20.083758,312.38706)"
+       inkscape:export-filename="/home/zealot/zed/ergogen-docs/docs/assets/anchor_average.png"
+       inkscape:export-xdpi="104.9274"
+       inkscape:export-ydpi="104.9274"
+       inkscape:transform-center-x="-0.53086985"
+       inkscape:transform-center-y="-0.028890762"
+       style="fill:none;fill-opacity:1;stroke:#52b413;stroke-opacity:1">
+      <circle
+         style="fill:none;fill-opacity:1;stroke:#52b413;stroke-width:1.6;stroke-linecap:round;stroke-opacity:1"
+         id="path1053-1-4-4"
+         cx="64.985443"
+         cy="37.208195"
+         r="5.1319785" />
+      <rect
+         style="fill:none;fill-opacity:1;stroke:#52b413;stroke-width:1.6;stroke-linecap:round;stroke-opacity:1"
+         id="rect1157-0-6-8"
+         width="4.4659085"
+         height="0.63357967"
+         x="67.849419"
+         y="36.891403" />
+    </g>
+    <g
+       id="g1241-1-0-2-0"
+       transform="matrix(-0.46915201,-0.00213915,-0.00213915,0.46915201,119.58257,312.40067)"
+       inkscape:export-filename="/home/zealot/zed/ergogen-docs/docs/assets/anchor_average.png"
+       inkscape:export-xdpi="104.9274"
+       inkscape:export-ydpi="104.9274"
+       inkscape:transform-center-x="0.53086969"
+       inkscape:transform-center-y="-0.028890762"
+       style="fill:none;fill-opacity:1;stroke:#0589de;stroke-opacity:1">
+      <circle
+         style="fill:none;fill-opacity:1;stroke:#0589de;stroke-width:1.6;stroke-linecap:round;stroke-opacity:1"
+         id="path1053-1-4-6-4"
+         cx="64.985443"
+         cy="37.208195"
+         r="5.1319785" />
+      <rect
+         style="fill:none;fill-opacity:1;stroke:#0589de;stroke-width:1.6;stroke-linecap:round;stroke-opacity:1"
+         id="rect1157-0-6-7-2"
+         width="4.4659085"
+         height="0.63357967"
+         x="67.849419"
+         y="36.891403" />
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:6.35px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="97.63752"
+       y="329.71799"
+       id="text5752-0-9"
+       inkscape:export-filename="/home/zealot/zed/ergogen-docs/docs/assets/anchor_average.png"
+       inkscape:export-xdpi="104.9274"
+       inkscape:export-ydpi="104.9274"><tspan
+         sodipodi:role="line"
+         id="tspan5750-5-6"
+         style="font-size:6.35px;stroke-width:0.264583"
+         x="97.63752"
+         y="329.71799">0. Existing Points</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:6.35px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="97.399033"
+       y="420.47519"
+       id="text5752-5-6"
+       inkscape:export-filename="/home/zealot/zed/ergogen-docs/docs/assets/anchor_average.png"
+       inkscape:export-xdpi="104.9274"
+       inkscape:export-ydpi="104.9274"><tspan
+         sodipodi:role="line"
+         id="tspan5750-6-6"
+         style="font-size:6.35px;stroke-width:0.264583"
+         x="97.399033"
+         y="420.47519">2. Postprocess</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:6.35px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="22.957788"
+       y="155.85704"
+       id="text5752-9"
+       inkscape:export-filename="/home/zealot/zed/ergogen-docs/docs/assets/anchor_follow.png"
+       inkscape:export-xdpi="95.800003"
+       inkscape:export-ydpi="95.800003"><tspan
+         sodipodi:role="line"
+         id="tspan5750-8"
+         style="font-size:6.35px;stroke-width:0.264583"
+         x="22.957788"
+         y="155.85704">2. Shift</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:6.35px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="21.971775"
+       y="199.25432"
+       id="text5752-9-9"
+       inkscape:export-filename="/home/zealot/zed/ergogen-docs/docs/assets/anchor_follow.png"
+       inkscape:export-xdpi="95.800003"
+       inkscape:export-ydpi="95.800003"><tspan
+         sodipodi:role="line"
+         id="tspan5750-8-1"
+         style="font-size:6.35px;stroke-width:0.264583"
+         x="21.971775"
+         y="199.25432">4. Shift</tspan><tspan
+         sodipodi:role="line"
+         style="font-size:6.35px;stroke-width:0.264583"
+         x="21.971775"
+         y="207.19182"
+         id="tspan9410">(again)</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:6.35px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="138.75905"
+       y="199.25432"
+       id="text5752-9-4"
+       inkscape:export-filename="/home/zealot/zed/ergogen-docs/docs/assets/anchor_follow.png"
+       inkscape:export-xdpi="95.800003"
+       inkscape:export-ydpi="95.800003"><tspan
+         sodipodi:role="line"
+         id="tspan5750-8-9"
+         style="font-size:6.35px;stroke-width:0.264583"
+         x="138.75905"
+         y="199.25432">5. Rotate</tspan><tspan
+         sodipodi:role="line"
+         style="font-size:6.35px;stroke-width:0.264583"
+         x="138.75905"
+         y="207.19182"
+         id="tspan10614">(towards)</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:6.35px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="138.01338"
+       y="155.85704"
+       id="text5752-7"
+       inkscape:export-filename="/home/zealot/zed/ergogen-docs/docs/assets/anchor_follow.png"
+       inkscape:export-xdpi="95.800003"
+       inkscape:export-ydpi="95.800003"><tspan
+         sodipodi:role="line"
+         id="tspan5750-2"
+         style="font-size:6.35px;stroke-width:0.264583"
+         x="138.01338"
+         y="155.85704">3. Rotate</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="10.850356"
+       y="134.4516"
+       id="text18266"><tspan
+         sodipodi:role="line"
+         id="tspan18264"
+         style="stroke-width:0.264583"
+         x="10.850356"
+         y="134.4516" /></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M -227.53517,-72.554143 V 10.069779"
+       id="path11839" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m -186.22321,-31.242182 h -82.62392"
+       id="path11839-5" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m -230.43992,-69.649398 2.90475,-2.904745 2.71403,2.714029"
+       id="path11976" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m -103.95065,-53.072189 -0.54253,-4.07195 3.80459,-0.506917"
+       id="path11976-4"
+       inkscape:transform-center-x="-2.0139599"
+       inkscape:transform-center-y="1.8058277" />
+    <path
+       style="fill:none;stroke:#7f7f7f;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m -141.79943,-48.499701 4.10485,-0.159049 0.14861,3.835338"
+       id="path11976-4-9"
+       inkscape:transform-center-x="2.0117816"
+       inkscape:transform-center-y="2.0266603" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m -230.43992,7.1650341 2.90475,2.9047449 2.71403,-2.7140279"
+       id="path11976-8" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m -189.12795,-34.146932 2.90474,2.90475 -2.71403,2.71403"
+       id="path11976-7" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m -265.94239,-34.146932 -2.90474,2.90475 2.71403,2.71403"
+       id="path11976-7-0" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:8.36512px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.348546"
+       x="-262.90826"
+       y="-33.735722"
+       id="text12997-4"><tspan
+         sodipodi:role="line"
+         id="tspan12995-8"
+         style="font-weight:bold;font-size:8.36512px;stroke-width:0.348546"
+         x="-262.90826"
+         y="-33.735722"
+         dy="-0.6586706 0.6586706">-X</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:8.36512px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.348546"
+       x="-203.56577"
+       y="-34.581799"
+       id="text12997-4-0"><tspan
+         sodipodi:role="line"
+         id="tspan12995-8-4"
+         style="font-weight:bold;font-size:8.36512px;stroke-width:0.348546"
+         x="-203.56577"
+         y="-34.581799"
+         dy="0 0.92213881"><tspan
+   style="font-weight:bold;font-size:6.5062px;stroke-width:0.348546"
+   id="tspan40462"
+   dy="-0.92213881">+</tspan>X</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:8.36512px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.348546"
+       x="-224.37643"
+       y="-59.406662"
+       id="text12997-4-0-2"><tspan
+         sodipodi:role="line"
+         id="tspan12995-8-4-9"
+         style="font-weight:bold;font-size:8.36512px;stroke-width:0.348546"
+         x="-224.37643"
+         y="-59.406662"
+         dy="0 0.92213881"><tspan
+   style="font-weight:bold;font-size:6.5062px;stroke-width:0.348546"
+   id="tspan28875"
+   dy="-0.92213881">+</tspan>Y</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:8.36512px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.348546"
+       x="-222.89221"
+       y="3.6582446"
+       id="text12997-4-0-2-6"><tspan
+         sodipodi:role="line"
+         id="tspan12995-8-4-9-1"
+         style="font-weight:bold;font-size:8.36512px;stroke-width:0.348546"
+         x="-222.89221"
+         y="3.6582446"
+         dy="-0.39520237 0.39520237">-Y</tspan></text>
+    <rect
+       style="fill:#ffffff;stroke:none;stroke-width:0.28657;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect49616"
+       width="19.353252"
+       height="8.7090693"
+       x="-237.21179"
+       y="-35.596718" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:6.35px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="-235.06183"
+       y="-29.251606"
+       id="text12997"><tspan
+         sodipodi:role="line"
+         id="tspan12995"
+         style="font-size:6.35px;stroke-width:0.264583"
+         x="-235.06183"
+         y="-29.251606">(0,0)</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:6.35px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="-125.46191"
+       y="-66.552536"
+       id="text12997-6"><tspan
+         sodipodi:role="line"
+         id="tspan12995-5"
+         style="font-weight:bold;font-size:6.35px;stroke-width:0.264583"
+         x="-125.46191"
+         y="-66.552536">0°</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:6.35px;line-height:1.25;font-family:sans-serif;fill:#7f7f7f;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="-125.3713"
+       y="-45.111599"
+       id="text12997-6-9"><tspan
+         sodipodi:role="line"
+         id="tspan12995-5-6"
+         style="font-size:6.35px;fill:#7f7f7f;fill-opacity:1;stroke-width:0.264583"
+         x="-125.3713"
+         y="-45.111599">0°</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:6.35px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="-168.73773"
+       y="-28.931015"
+       id="text12997-6-0"><tspan
+         sodipodi:role="line"
+         id="tspan12995-5-4"
+         style="font-weight:bold;font-size:6.35px;stroke-width:0.264583"
+         x="-168.73773"
+         y="-28.931015">90°</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:6.35px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="-131.01106"
+       y="9.04951"
+       id="text12997-6-1"><tspan
+         sodipodi:role="line"
+         id="tspan12995-5-0"
+         style="font-weight:bold;font-size:6.35px;stroke-width:0.264583"
+         x="-131.01106"
+         y="9.04951">180°</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:6.35px;line-height:1.25;font-family:sans-serif;fill:#7f7f7f;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="-131.27435"
+       y="-12.798554"
+       id="text12997-6-4"><tspan
+         sodipodi:role="line"
+         id="tspan12995-5-8"
+         style="font-size:6.35px;fill:#7f7f7f;fill-opacity:1;stroke-width:0.264583"
+         x="-131.27435"
+         y="-12.798554">-180°</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:6.35px;line-height:1.25;font-family:sans-serif;fill:#7f7f7f;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="-142.8508"
+       y="-28.931015"
+       id="text12997-6-7"><tspan
+         sodipodi:role="line"
+         id="tspan12995-5-08"
+         style="font-size:6.35px;fill:#7f7f7f;fill-opacity:1;stroke-width:0.264583"
+         x="-142.8508"
+         y="-28.931015">-270°</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:6.35px;line-height:1.25;font-family:sans-serif;fill:#7f7f7f;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="-114.84249"
+       y="-28.931015"
+       id="text12997-6-6"><tspan
+         sodipodi:role="line"
+         id="tspan12995-5-2"
+         style="font-size:6.35px;fill:#7f7f7f;fill-opacity:1;stroke-width:0.264583"
+         x="-114.84249"
+         y="-28.931015">-90°</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:6.35px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="-87.285767"
+       y="-28.931015"
+       id="text12997-6-47"><tspan
+         sodipodi:role="line"
+         id="tspan12995-5-9"
+         style="font-weight:bold;font-size:6.35px;stroke-width:0.264583"
+         x="-87.285767"
+         y="-28.931015">270°</tspan></text>
+    <path
+       id="path49970"
+       style="color:#000000;fill:#7f7f7f;fill-opacity:1;stroke-width:1;stroke-linecap:round;-inkscape-stroke:none"
+       d="m -122.69719,-54.727957 v 1.000456 c 12.42469,0 22.48596,10.061274 22.48596,22.485966 0,12.42469 -10.06127,22.4864822 -22.48596,22.4864822 -12.42469,0 -22.48648,-10.0617922 -22.48648,-22.4864822 0,-6.706534 2.93165,-12.724307 7.58398,-16.843099 0.23179,-0.205202 -0.34693,-0.382892 -0.10676,-0.578517 l -0.71175,-0.0228 c -4.76741,4.299462 -7.76541,10.523537 -7.76541,17.444415 0,12.965128 10.52129,23.486422 23.48642,23.486422 12.96513,0 23.485902,-10.521294 23.485902,-23.486422 0,-12.965132 -10.520772,-23.486423 -23.485902,-23.486423 z"
+       sodipodi:nodetypes="ccssssccsssc" />
+    <path
+       id="circle50435"
+       style="color:#000000;fill:#000000;stroke-width:1;stroke-linecap:round;-inkscape-stroke:none"
+       d="m -122.69719,-63.337251 c -17.71927,0 -32.09417,14.376447 -32.09417,32.095716 0,17.719267 14.3749,32.09364842 32.09417,32.09364842 17.71927,0 32.095712,-14.37438142 32.095713,-32.09364842 0,-10.725274 -5.26778,-20.225245 -13.355253,-26.054224 -0.1856,-0.02038 -0.40993,0.02693 -0.53564,0.14734 -0.11753,0.112571 -0.14299,0.286614 -0.13349,0.596355 7.885873,5.639255 13.023927,14.872438 13.023927,25.310529 0,17.178829 -13.916427,31.09370864 -31.095257,31.09370864 -17.17883,0 -31.09371,-13.91487964 -31.09371,-31.09370864 0,-17.17883 13.91488,-31.095777 31.09371,-31.095777 z"
+       sodipodi:nodetypes="cssscscssscc" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="-76.941666"
+       y="35.836609"
+       id="text91062"><tspan
+         sodipodi:role="line"
+         id="tspan91060"
+         style="stroke-width:0.264583"
+         x="-76.941666"
+         y="35.836609" /></text>
+    <circle
+       style="fill:none;stroke:#ff2626;stroke-width:0.750651;stroke-linecap:round;stroke-opacity:1"
+       id="path1053-0-9"
+       cx="-158.55336"
+       cy="-47.31702"
+       r="2.4077029"
+       transform="rotate(-136.91412)"
+       inkscape:export-filename="/home/zealot/zed/ergogen-docs/docs/assets/anchor_follow.png"
+       inkscape:export-xdpi="95.800003"
+       inkscape:export-ydpi="95.800003" />
+    <rect
+       style="fill:none;stroke:#000000;stroke-width:0.750651;stroke-linecap:round;stroke-opacity:1"
+       id="rect1157-9-9"
+       width="2.0952117"
+       height="0.29724827"
+       x="-157.2097"
+       y="-47.465641"
+       transform="rotate(-136.91412)"
+       inkscape:export-filename="/home/zealot/zed/ergogen-docs/docs/assets/anchor_follow.png"
+       inkscape:export-xdpi="95.800003"
+       inkscape:export-ydpi="95.800003" />
+  </g>
+</svg>

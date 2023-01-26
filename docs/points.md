@@ -9,8 +9,18 @@ import TabItem from '@theme/TabItem';
 
 A point in this context refers to a 2D point `[x,y]` with a rotation/orientation `r` and some extra metadata added in.
 These can be thought of as the middle points of the keycaps in a resulting keyboard layout, with the additional handling of the angle of the keycap, plus, again, some metadata (like names, row/column information, custom variables, etc.).
-Points can later be used to position shapes (to form board outlines) and PCB footprints – optionally by using filters to use only a subset.
 
+The basic coordinate system works just like your math workbooks did: X values are positive to the right, negative to the left, while Y values are positive upward, negative downward.
+Additionally, rotation represents the direction of the Y axis, and changes to it work counter-clockwise (so +90° turns to the left, while -90° turns to the right).
+Throughout this doc, we'll often reference points in the form `[x, y, r°]`.
+
+<div style={{textAlign: 'center'}}>
+
+![Ergogen coordinate system](./assets/coords.png)
+
+</div>
+
+Points are an important part of keyboard creation as they can later be used to position shapes (to form board outlines) and PCB footprints &ndash; optionally by using filters to use only a subset.
 But thing would get pretty tedious if we had to lay out each point manually, and downright horrific if any kind of trigonometry came into play!
 So Ergogen tries to do as much of the heavy lifting as it can while providing more comfortable declaration alternatives.
 
@@ -20,8 +30,9 @@ So Ergogen tries to do as much of the heavy lifting as it can while providing mo
 
 ## Anchors
 
-One of these alternatives is the use of anchors, where we don't *directly* specify a point's `x`/`y`/`r` coordinates, but compute it from an already existing starting point through some translation/rotation.
-Anchors try to be very flexible, and it naturally comes with some complexity – but remember that they are just another way to declare a point.
+One of these alternatives is the use of anchors, where we don't *directly* specify a point's `x`/`y`/`r` coordinates, but compute them from an already existing starting point through some translation/rotation/adjustment.
+Of course, direct point declarations are also possible when starting from `[0, 0, 0°]` and translating/rotating right to where you want the point to be, but we can do better than that.
+Anchors try to be very flexible, and it naturally comes with some complexity &ndash; but remember that they are just another way to declare a point.
 
 Anchors can be parsed from the following data types:
 
@@ -45,7 +56,7 @@ In a full, object anchor declaration, the following fields can be used:
 
 - **`ref`** is the starting point from where the anchor will perform its additional modifications.
   This field is parsed as an anchor itself, recursively.
-  So in its easiest form, it can be a string to designate an existing starting point by name (more on names later), but it can also be a full nested anchor if so desired.
+  So in its easiest form, it can be a string to designate an existing starting point by name (more on names [later](#keys)), but it can also be a full nested anchor if so desired.
 
 - **`aggregate`** is an alternative to `ref` when the combination of several locations is required as the starting point for further adjustment.
   They're mutually exclusive, so we can use either `ref` or `aggregate` in any given anchor.
@@ -82,8 +93,8 @@ In a full, object anchor declaration, the following fields can be used:
 
   :::caution
   It's important that shifting happens according to the current rotation of the point.
-  By default, a 0° rotation is "looking right", so that positive `x` shifts move it to the right, negative `x` shifts to the left, positive `y` shifts up, negative `y` shifts down.
-  But if r=90° (so the point is "looking down", as rotation works clockwise), then a positive `x` shift would move it downward.
+  By default, a 0° rotation is "looking up", so that positive `x` shifts move it to the right, negative `x` shifts to the left, positive `y` shifts up, negative `y` shifts down.
+  But if r=90° (so the point is "looking left", as, remember, rotation works counter-clockwise), then a positive `x` shift would move it upward.
   :::
 
 - **`rotate`** is a kind of *post*-rotation after shifting, as opposed to how `orient` was the *pre*-rotation.
@@ -98,15 +109,15 @@ In a full, object anchor declaration, the following fields can be used:
   <br/>
 
   :::tip
-  Let's say you have a point rotated 45° and want to shift is "visually right". You could either reset its rotation via `orient`, then shift, then re-set the rotation with `rotate`; or, you could do the shift and then declare that this whole anchor only `affect`s `"x"`.
+  Let's say you have a point rotated 45° and want to shift is "visually right". You could either reset its rotation via `orient`, then shift, then reset the rotation with `rotate`; or, you could do the shift and then declare that this whole anchor only `affect`s `"x"`. The *amount* of shifting wouldn't be the same, but the important thing is that you could constrain the movement to the X axis this way.
 
   Or let's say you want to copy the rotation of another, already existing point into your current anchor calculation. You can do so using a multi-anchor (see above), `ref`erencing the existing point in the second part, and then declare `affect: "r"` to prevent it from overwriting anything else, thereby setting just the rotation.
   :::
 
 - **`resist`** states that we do **not** want the special treatment usually afforded to mirrored points.
   We'll get to [mirroring](#mirroring) in a second, but from an anchor perspective, all we need to know is that shifting and orienting/rotating are all mirrored for mirrored points, to keep things symmetric.
-  So if we specify a shift of `[1, 1]`, what actually gets applied is `[-1, 1]`, and rotations are counter-clockwise in those cases, too.
-  But if we don't want this behavior, (say, because PCB footprints go on the same, upward facing side of the board, no matter the half) we can `resist` it.
+  So if we specify a shift of `[1, 1]` on a mirrored point, what actually gets applied is `[-1, 1]`, and rotations are clockwise (read, **counter**-counter-clockwise) in those cases, too.
+  But if we don't want this behavior, (say, because PCB footprints go on the same, upward facing side of the board, no matter the half) we can `resist` the special treatment.
 
 
 
@@ -118,24 +129,142 @@ In a full, object anchor declaration, the following fields can be used:
 <p>
 
 To get the gist of what's happening, take a look at the following anchor config and its visualization.
-It first orients itself -45°, so 45° counter-clockwise.
-Then it shift "one to the right", but since its orientation is now -45°, "right" means along the diagonal line.
-Once it gets there (at [&radic;2/2, &radic;2/2], on the unit circle), it finally rotates another -135°, which (when added to its existing rotation) results is -180°, so it's looking "left".
+It first orients itself 45°, then it shift "one to the right", but since its orientation is now 45°, "right" means "up and to the right" along the diagonal line.
+Once it gets there (at [&radic;2/2, &radic;2/2], on the unit circle), it finally rotates another 135°, which (when added to its existing rotation) results is 180°, so it's looking "down".
 
 <Tabs>
 <TabItem value="config" label="Config" default>
 
 ```yaml
 anchor:
-  orient: -45
+  orient: 45
   shift: [1, 0]
-  rotate: -135
+  rotate: 135
 ```
 
 </TabItem>
 <TabItem value="visualization" label="Visualization">
 
-![Anchor basic example](./assets/anchor_basic.png)
+![Basic anchor example](./assets/anchor_basic.png)
+
+</TabItem>
+</Tabs>
+
+</p>
+</details>
+
+<details><summary>Follow-the-dots</summary>
+<p>
+
+We can now turn towards multi-anchors, which are just regular anchors in an array.
+Arrays in YAML are denoted by using the dash (`-`) notation and an extra level of indent.
+The first item is the same as above, meaning we're starting from the same situation as the basic example.
+Only now, the result of the basic example won't be the end, only the starting point of a second anchor component.
+
+Shifting with a positive `x` coordinate usually means "visually right", but remember that our starting point (resulting from the first sub-anchor) faces down, so positive `x` values here mean "visually left".
+
+On top of this, we demonstrate how `rotate` (or `orient`) works when given a sub-anchor instead of a number, turning towards the center, automatically calculating the degrees of rotation it requires.
+Hopefully this demonstrates how easy it is to get to very non-obvious coordinates using nice "round" numbers only &ndash; no &pi; in sight!
+For the record, the final result is a point at `[-0.293, 0.707, -157.5°]`.
+
+<Tabs>
+<TabItem value="config" label="Config" default>
+
+```yaml
+anchor:
+  - orient: 45
+    shift: [1, 0]
+    rotate: 135
+  - shift: [1, 0]
+    rotate.shift: [0, 0]
+```
+
+</TabItem>
+<TabItem value="visualization" label="Visualization">
+
+![Follow-the-dots anchor example](./assets/anchor_follow.png)
+
+</TabItem>
+</Tabs>
+
+</p>
+</details>
+
+<details><summary>Averaging</summary>
+<p>
+
+Here we can see how to aggregate two existing points.
+`left` is at `[-1, 0, -90°]`, marked green, while `right` is at `[1, 0, 90°]`, marked blue.
+Aggregating without a `method` defaults to `average`, so what we get as our aggregated point is the good 'ol `[0, 0, 0°]` that we would have started with anyway.
+Note that the rotation also got averaged, not just the `x`/`y` coordinates.
+
+From here on out, it's the same as if we `ref`erenced a single existing starting point, or left it empty for the default `[0, 0, 0°]`.
+We can perform any additional shifting or rotating, make this a part of a multi-anchor, whatever...
+
+<Tabs>
+<TabItem value="config" label="Config" default>
+
+```yaml
+anchor:
+  aggregate.parts:
+    - left
+    - right
+  shift: [1, 0]
+  rotate: 180
+```
+
+</TabItem>
+<TabItem value="visualization" label="Visualization">
+
+![Anchor averaging example](./assets/anchor_average.png)
+
+</TabItem>
+</Tabs>
+
+</p>
+</details>
+
+<details><summary>Affecting</summary>
+<p>
+
+
+
+<Tabs>
+<TabItem value="config" label="Config" default>
+
+```yaml
+anchor:
+  
+```
+
+</TabItem>
+<TabItem value="visualization" label="Visualization">
+
+TODO
+
+</TabItem>
+</Tabs>
+
+</p>
+</details>
+
+<details><summary>Resisting</summary>
+<p>
+
+
+
+<Tabs>
+<TabItem value="config" label="Config" default>
+
+```yaml
+anchor:
+  
+```
+
+</TabItem>
+<TabItem value="visualization" label="Visualization">
+
+TODO
 
 </TabItem>
 </Tabs>

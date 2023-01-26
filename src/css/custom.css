@@ -28,6 +28,6 @@ html[data-theme='dark'] .docusaurus-highlight-code-line {
 }
 
 
-img.navbar__logo {
+img.navbar__logo, article img {
   border-radius: 5px;
 }
