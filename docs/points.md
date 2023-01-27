@@ -227,20 +227,29 @@ anchor:
 <details><summary>Affecting</summary>
 <p>
 
+Let's say we have an existing point at `[-1, 0, 45°]`, fittingly named `existing`, and we want a new point "facing the other way".
+It would be easy to add 180° to its rotation, if we knew it &ndash; but as we saw in previous examples, some coordinate values are not exactly round numbers and using them would be easier through calculation.
+Fortunately, we don't have to recalculate it, either.
+We can just `ref`erence the existing point, and then pick-and-choose what we want to reuse from it using `affect`.
 
+So we get a multi-anchor going by first shifting our point to where we want it to be on the x/y plane, then adding a second part that `ref`s the existing point and make some further adjustments.
+Normally, specifying a `ref` would overwrite all progress we've made so far, but `affect` to the rescue.
 
 <Tabs>
 <TabItem value="config" label="Config" default>
 
 ```yaml
 anchor:
-  
+  - shift: [0, 1]
+  - ref: existing
+    rotate: 180
+    affect: r
 ```
 
 </TabItem>
 <TabItem value="visualization" label="Visualization">
 
-TODO
+![Anchor affect example](./assets/anchor_affect.png)
 
 </TabItem>
 </Tabs>
@@ -251,20 +260,44 @@ TODO
 <details><summary>Resisting</summary>
 <p>
 
+Let's take the same starting point we have in the Averaging example, only now the existing points are not separate, but mirror images of each other, named `left` at `[-1,0,-90°]` (green) and `mirror_left` at `[1,0,90°]` (blue).
+Read more on [mirroring](#mirroring) later.
 
+So, if we do an ordinary right shift and some counter-clockwise (positive) rotation on a "normal" point, we get the normal result.
+Remember, though, that since `left` is facing towards the middle, a "rightward" shift from its perspective is going to be moving "visually down" (see 1).
+
+Now the interesting part: when we do the same "rightward" shift + positive rotation on a mirrored point, what actually happens is a seemingly leftward shift and a negative rotation, to keep the mirror image in sync with its source (see 2).
+
+If we don't want this, we can specify the same with an additional `resist: true` and now the mirrored point will also do a rightward shift (from its perspective!) and counter-clockwise rotation (see 3).
 
 <Tabs>
 <TabItem value="config" label="Config" default>
 
 ```yaml
-anchor:
-  
+# 1, default non-mirrored case
+anchor_1:
+  ref: left
+  shift: [1, 0]
+  rotate: 45
+
+# 2, default mirrored case
+anchor_2:
+  ref: left_mirror
+  shift: [1, 0]
+  rotate: 45
+
+# 3, mirrored case with resistance
+anchor_3:
+  ref: left_mirror
+  shift: [1, 0]
+  rotate: 45
+  resist: true
 ```
 
 </TabItem>
 <TabItem value="visualization" label="Visualization">
 
-TODO
+![Anchor resist example](./assets/anchor_resist.png)
 
 </TabItem>
 </Tabs>
@@ -276,20 +309,81 @@ TODO
 
 ## Zones
 
-### Layout basics
+Anchors are a great way to dial in the exact position of a single point, but they would be cumbersome for whole keyboards.
+So while you'll be using anchors all the time in sub-fields of your config, the main approach to define batches of points is through the use of `zones`.
+
+### Basics
+
+I'm probably not revealing a big secret if I confess that "Ergogen" is just a contraction of "Ergonomic Generator".
+And what makes it "Ergo" is its opinionated, explicit focus on the column-stagger.
+This means that instead of the more common rows-then-columns order, Ergogen lays out zones columns first.
+A collection of columns comprises a zone, and we can have as many zones as we'd like &ndash; for example, to differentiate the keywell and the thumb fan/cluster.
+Columns can be staggered and splayed relative to each other, while zones can be anchored to each other so that everything is right where you want it.
+
+A full zone declaration looks something like this (in the context of the whole config):
+
+```yaml
+points:
+  zones:
+    my_zone_name: # A unique key for each zone
+      anchor: # Optional anchor to position the zone, default = [0, 0, 0°]
+      columns: 
+        first_column: # A unique key for each column within the zone
+          rows:
+            row_name: <defs> # Key-level attributes set here apply to this key alone
+            ...
+          key: <defs> # Key-level attributes set here apply to the whole column
+        ...
+      rows:
+        row_name: <defs> # Key-level attributes set here apply to the whole row
+        ...
+      key: <defs> # Key-level attributes set here apply to the whole zone
+    ...
+  key: <defs> # Key-level attributes set here apply to ALL zones
+```
 
 ### Inheritance
+
+As you can see, there are quite a few places where these so-called key-level attributes can be defined.
+How are poor keys to know which to pay attention to, and which to ignore?
+Enter inheritance, where (somewhat similarly to the usual programming concept of inheritance) we go from generic to specific, override what we must, and just reuse the rest.
+
+The inheritance order goes:
+
+1. Built-in, hardcoded defaults
+2. Global `points.key` overrides
+3. Zone-wide `points.zones.<zone_name>.key` overrides
+4. Column-wide `points.zones.<zone_name>.columns.<column_name>.key` overrides
+5. Row-wide `points.zones.<zone_name>.rows.<row_name>` overrides
+6. Key-specific `points.zones.<zone_name>.columns.<column_name>.rows.<row_name>` overrides
+
+All this complexity is only there to minimize the need for repetition.
+We can freely choose the best place for any key-level attribute where it can apply to all its victims while being declared only once.
+These sources "extend" each other in this order so by the time we reach a specific key, every level had an opportunity to modify something.
+
+:::note
+The higher the number before an override, the higher chance it has to override anything that came before it.
+So values declared at the 6th, key-specific level are sacred and inviolable, while everything the user configures can override the lowly hardcoded defaults at level 1.
+:::
+
+:::caution
+TODO, no key-suffix for levels 5-6!
+:::
+
+
+
+### Keys
 
 ### Columns
 
 ### Rows
 
-### Keys
 
 ## Rotation
 
 ## Mirroring
 
+## Putting it all together
 
 
 
@@ -311,40 +405,13 @@ TODO
 
 
 
-
-What makes this generator "ergo" is the implicit focus on the column-stagger.
+What makes this generator "ergo" is the implicit 
 And since we're focusing on column-stagger, keys are laid out in columns, and a collection of columns is called a "zone".
-For example, we can define multiple, independent zones to make it easy to differentiate between the keywell and the thumb fan/cluster.
+For example, we can define multiple, independent zones to make it easy to differentiate between .
 
 Points can be described as follows:
 
-```yaml
-points:
-    zones:
-        my_zone_name: # A unique key for each zone which will be used to refer to it
-            anchor: # Optional - Anchor to position the zone 
-                ref: <point reference> # Optional - Reference to another point to anchor to
-                orient: <num> # default = 0
-                shift: [x, y] # default = [0, 0]
-                rotate: <num> # default = 0
-                affect: <string> # default = xyr - Specifies which axis are affected by this anchor 
-            columns: 
-              column_name:
-                stagger: <num> # default = 0
-                spread: <num> # default = 19
-                rotate: <num> # default = 0
-                origin: [x, y] # relative to center of column's first key, default = [0, 0]
-                rows:
-                  row_name: <key-specific key def> # Optional - Key properties set here apply to this colrow intersection 
-                key: <column-level key def> # Optional - Key properties set here apply to the whole column
-              second_column: <column def>
-            rows:
-                row_name: <row-level key def> # Optional - Key properties set here affect the whole row
-            key: <zone-level key def> # Optional - Key properties set here affect the whole zone
-        another_zone:
-          [...]
-    key: # Optional - Key properties set here affect all zones
-```
+
 
 ## `zones`
 
@@ -414,7 +481,7 @@ Easy.
 ### `keys`
 
 Now for the trickier part: keys.
-There are five ways to set key-related options (again, to minimize the need for repetition):
+There are five ways to set key-related options (again, to ):
 
 1. at the global-level (affecting all zones)
 2. at the zone-level
@@ -422,7 +489,7 @@ There are five ways to set key-related options (again, to minimize the need for 
 4. at the row-level
 5. at the key-level
 
-These "extend" each other in this order so by the time we reach a specific key, every level had an opportunity to modify something.
+
 
 :::info
 Note that unlike the overriding for rows, key-related extension is additive.
