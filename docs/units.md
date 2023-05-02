@@ -23,3 +23,15 @@ units:
   a: cy - 7
   b: a * 1.5
 ```
+
+In fact, there are also a few internal variables that rely on previous units and formulas to provide easily overrideable default values to certain key-level attributes (for further explanation, see the [points section](./points.md)):
+
+```yaml
+$default_stagger: 0,
+$default_spread: 'u',
+$default_splay: 0,
+$default_height: 'u-1',
+$default_width: 'u-1',
+$default_padding: 'u',
+$default_autobind: 10
+```

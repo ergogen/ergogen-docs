@@ -28,6 +28,28 @@ So Ergogen tries to do as much of the heavy lifting as it can while providing mo
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## Anchors
 
 One of these alternatives is the use of anchors, where we don't *directly* specify a point's `x`/`y`/`r` coordinates, but compute them from an already existing starting point through some translation/rotation/adjustment.
@@ -307,6 +329,35 @@ anchor_3:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## Zones
 
 Anchors are a great way to dial in the exact position of a single point, but they would be cumbersome for whole keyboards.
@@ -316,9 +367,10 @@ So while you'll be using anchors all the time in sub-fields of your config, the 
 
 I'm probably not revealing a big secret if I confess that "Ergogen" is just a contraction of "Ergonomic Generator".
 And what makes it "Ergo" is its opinionated, explicit focus on the column-stagger.
-This means that instead of the more common rows-then-columns order, Ergogen lays out zones columns first.
+This means that instead of the more common rows-then-columns order, Ergogen lays out zones columns first, left-to-right by default.
 A collection of columns comprises a zone, and we can have as many zones as we'd like &ndash; for example, to differentiate the keywell and the thumb fan/cluster.
 Columns can be staggered and splayed relative to each other, while zones can be anchored to each other so that everything is right where you want it.
+Within columns, the rows are built from bottom to top by default.
 
 A full zone declaration looks something like this (in the context of the whole config):
 
@@ -361,114 +413,123 @@ All this complexity is only there to minimize the need for repetition.
 We can freely choose the best place for any key-level attribute where it can apply to all its victims while being declared only once.
 These sources "extend" each other in this order so by the time we reach a specific key, every level had an opportunity to modify something.
 
+:::caution
+As you might notice, levels 2-3-4 have a `.key` suffix while levels 5-6 do *not*!
+This is because parent levels for the former three (`points`, `points.zones.<zone_name>` and `points.zones.<zone_name>.columns.<column_name>`, respectively) can have other content as well, while the latter two are exclusively for key-level attributes anyway.
+:::
+
 :::note
 The higher the number before an override, the higher chance it has to override anything that came before it.
 So values declared at the 6th, key-specific level are sacred and inviolable, while everything the user configures can override the lowly hardcoded defaults at level 1.
 :::
 
-:::caution
-TODO, no key-suffix for levels 5-6!
+For example, let's suppose that a key-related attribute is already defined at the column-level (at `points.zones.<zone_name>.columns.<column_name>.key`, so level 4).
+When we later encounter a key-level extension for this key (at `points.zones.<zone_name>.columns.<column_name>.rows.<row_name>`, so level 6) that specifies a few things but not this exact key, its value will stay the same instead of disappearing.
+
+:::note
+When we **want** it to disappear, UN-specifying values is also possible with the `$unset` directive, because this key-level inheritance relies on the same implementation we've discussed in the [`preprocessing`](./preprocessing.md) section.
+
+A common use-case for this is when you'd want to remove an additional pinky key.
+You can still declare zone-wide bottom/home/top rows to apply to the ring/middle/index/inner columns, but for the pinky, you simply override as `pinky.rows.top: $unset` to be left with only two pinky keys.
 :::
+
+When multiple levels define the same attribute and there is a "collision", simple values (like booleans, numbers, or strings) replace the old ones, while composites (arrays or objects) apply this same extension mechanism recursively, element-wise.
+So when `key = 1` is extended by `key = 2`, the result is `key = 2`.
+But if `key = {a: 1}` is extended by `key = {b: 2}`, the result is `key = {a: 1, b: 2}`.
+Lastly, if `key = {a: 1}` is extended by `key = {a: $unset, b: 2}`, the result is `key = {b: 2}`.
+
+
 
 
 
 ### Keys
 
-### Columns
+Keys can contain any metadata as attributes (which may become useful later down the line), but only a handful has meaning to Ergogen itself.
+These are the following:
 
-### Rows
+- **`stagger`**:
+  Column staggering means an extra vertical shift to the starting point of a whole column compared to the previous one (initially `0`, cumulative afterwards).
+  Its default value is `0` (also overrideable with the `$default_stagger` internal variable).
+
+- **`spread`**:
+  Once a column has been laid out, `spread` (the horizontal space between this column and the next) is applied before the layout of the next column begins.
+  Its default value is `u` (also overrideable with the `$default_spread` internal variable).
+
+- **`splay`**:
+  As a kind of companion to `spread`, `splay` applies a rotation (around an optional **`origin`**) to the starting point of a new column.
+  Its default value is `0` (also overrideable with the `$default_splay` internal variable), and it rotates around the default origin of `[0, 0]` (meaning the center of where the first key in the column would go).
+
+- **`padding`**:
+  Once a point within a column is determined, `padding` represents the vertical gap between it and the next row.
+  Its default value is `u` (also overrideable with the `$default_padding` internal variable).
+
+- **`orient`** / **`shift`** / **`rotate`**:
+  The names might be familiar from the anchor section.
+  And indeed, they do behave very similarly &ndash; only they are interpreted **cumulatively** within a column.
+  The current key `orients` (default = `0`), `shifts` (default = `[0, 0]`), and rotates (default = `0`), and in doing so, not only positions itself, but provides the starting point for the *next* row within the column (to which the above `padding` can be applied).
+
+- **`bind`**:
+  Represents the amount of directional "reach" each key has when it tries to bind with its neighbors to form a contiguous shape.
+  For a more in-depth explanation, check the [outlines section](./outlines.md).
+  The value can be a number (uniform reach in every direction), an array of two numbers (horizontal/vertical reach), or an array of four numbers (top, right, bottom, and left reach, respectively &ndash; similarly to how CSS would assign things).
+  The default is no bind (represented by `-1`, to differentiate from `0` length reaches).
+
+- **`autobind`**:
+  Enables automatically assigned binding in relevant direction to combine traditional keywells.
+  For a more in-depth explanation, check the [outlines section](./outlines.md).
+  Its default value is `10` (also overrideable with the `$default_autobind` internal variable).
+
+- **`skip`**:
+  This field signals that the current point is just a "helper" and should not be included in the output.
+  This can happen when a _real_ point is more easily calculable through a "stepping stone", but then we don't actually want the stepping stone to be a key itself.
+  The default is, of course, `false`.
+
+- **`asym`**:
+  Determines which side of the keyboard the key should belong to (see [Mirroring](#mirroring)).
+  Its default value is `both`.
+
+- **`mirror`**:
+  Provides a way to override any key-level attributes for mirrored keys (see [Mirroring](#mirroring)).
+  Empty by default.
+
+- **`colrow`**:
+  Built-in convenience variable to store a concatenated name of the column and the row, uniquely identifying a key **within a zone**.
+  Its value is `{{col.name}}_{{row}}`, built through templating (see below).
+
+- **`name`**:
+  The name of the key that identifies it uniquely not just within its zone, but **globally**.
+  Its default value is `{{zone.name}}_{{colrow}}`, built through templating (see below).
+
+  :::note
+  Single key zones are common helpers for defining and naming interesting points on the board.
+  To spare you from having to reference these as `zonename_default_default` (each `default` being the default column or row name, respectively, when nothing is specified), `default` suffices are always trimmed.
+  So for single key zones, the name of the key is equivalent to the name of the zone.
+  :::
+
+- **`width`** / **`height`**:
+  Helper values to signify the keycap width/height intended for the current position(s).
+
+  :::caution
+  These values only apply to the **demo** representation of the calculated key positions.
+  For actual outlines to be cut (or used as a basis for cases), see the [outlines section](./outlines.md).
+  :::
+
+Other than these, any extra field can be specified, containing any value.
+These can become useful later when we want to pass key-specific information to PCB footprints (for example, which nets the current key should belong to).
+
+Basic **templating** is supported to make reusing existing key-level attributes easier.
+Anything within double curly braces (`{{` and `}}`) inside a string is interpreted as a reference to, and is replaced by the key-level attribute of the same name.
+This is how `{{col.name}}_{{row}}` automatically expands to something like `pinky_home` in the case of `colrow`, or how `{{zone.name}}_{{colrow}}` expands to something like `keywell_pinky_home` in the case of `name`.
 
 
-## Rotation
-
-## Mirroring
-
-## Putting it all together
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-What makes this generator "ergo" is the implicit 
-And since we're focusing on column-stagger, keys are laid out in columns, and a collection of columns is called a "zone".
-For example, we can define multiple, independent zones to make it easy to differentiate between .
-
-Points can be described as follows:
-
-
-
-## `zones`
-
-We start with a `zones` clause, under which we can define the individual, named zones.
-
-### `anchor`
-Anchors are used to anchor and shift zones around an origin 
-#### `ref`
-An anchor has `[0, 0]` origin with a 0 degree orientation by default, but it can be changed to any other pre-existing point using `ref`. *(Consequently, the first zone can't use a ref, because there isn't any yet.)*  
-
-The `ref` field can also be an array of references, in which case their average is used -- mostly useful for anchoring to the center, by averaging a key and its mirror; see later.
-This initial position can then be changed with the `orient`, `shift`, and `rotate` options.
-`shift` adds extra translation, while the difference between `orient` and `rotate` is whether they add their rotation before or after the translation.
-
-:::note
-Anywhere an anchor can be specified, a list of anchors is also valid.
-It would be meaningless, though, if each subsequent anchor would override the previous one, so the `affect` clause helps to affect only certain dimensions of the anchor.
-It can be declared using a string containing any of `x`, `y`, or `r`, which stand for the x and y coordinates and the rotation of the anchor, respectively.
-:::
-
-### `columns`
-
-Once we know _where_ to start, we can describe the `columns` of our layout.
-
-```yaml
-columns:
-    column_name:
-      stagger: num # default = 0
-      spread: num # default = 19
-      rotate: num # default = 0
-      origin: [x, y] # relative to center of column's first key, default = [0, 0]
-      rows:
-        row_name: <key-specific key def>
-        ...
-      key: <column-level key def>
-    ...
-```
-
-#### `stagger`
-`stagger` means an extra vertical shift to the starting point of the whole column compared to the previous one (initially 0, cumulative afterwards).
-The layout of the column then proceeds according to the appropriate key declarations (more on this in a minute).
-
-#### `spread`
-Once the column has been laid out, `spread` (the horizontal space between this column and the next) is applied, and an optional (cumulative) rotation is added around the `origin` if `rotate` is specified.
-We repeat this until the end of the column definitions, then move on to the next zone.
-
-<hr />
-
-Regarding lower level layout, rows appear both in zones and columns, and keys can be defined in five (!) different places. So what gives?
-Don't worry, all this is there just so that we can keep repetition to a minimum.
-We could safely remove the `rows` and `key` options from zones, and the `key` option from column definitions, without losing any of the functionality.
-But we'd have to repeat ourselves a lot more.
+### Layout
 
 ### `rows`
 Let's start with rows.
 `zone.rows` can give an overall picture about how many rows we'll have, and set key-related options on a per-row basis.
-But what if we want to extend this initial picture with some column-specific details? (More on "extension" in a bit.)
+But what if we want to extend this initial picture with some column-specific details?
 For example, we want an outer pinky column where padding is tighter than it is for the others.
 That's where `column.rows` can help, specifying a row "extension" for just that column.
 
@@ -478,74 +539,75 @@ Like an outer pinky column with just two keys instead of the regular three.
 That's where `column.row_overrides` can help, specifying a row-level override that disregards the zone-level defaults.
 Easy.
 
-### `keys`
 
-Now for the trickier part: keys.
-There are five ways to set key-related options (again, to ):
 
-1. at the global-level (affecting all zones)
-2. at the zone-level
-3. at the column-level
-4. at the row-level
-5. at the key-level
+- columns, row-by-row
+  - cumulative
+- zones, column-by-column
 
 
 
-:::info
-Note that unlike the overriding for rows, key-related extension is additive.
-:::
-
-For example, let's suppose that a key-related attribute is already defined at the column-level.
-When we later encounter a key-level extension for this key that specifies a few things but not this exact key, its value will stay the same instead of disappearing.
+### Examples
 
 
-When there is a "collision", simple values (like booleans, numbers, or strings) replace the old ones, while composites (arrays or objects) apply this same extension recursively, element-wise.
-So when `key = 1` is extended by `key = 2`, the result is `key = 2`.
-But if `key = {a: 1}` is extended by `key = {b: 2}`, the result is `key = {a: 1, b: 2}`.
 
-Lastly, while there are a few key-specific attributes that have special meaning in the context of points (listed below), any key with any data can be specified here.
-This can be useful for storing arbitrary meta-info about the keys, or just configuring later stages with key-level parameters.
-So, for example, when the outline phase specifies `bind` as a key-level parameter (see below), it means that it can be specified just like any other key-level attribute.
 
-Now for the "official" key-level attributes:
 
-```yaml
-name: name_override # default = a concatenation of zone, column, and row
-shift: [x, y] # default = [0, 0]
-rotate: num # default = 0
-padding: num # default = 19
-skip: boolean # default = false
-asym: left | right | both # default = both
-mirror: <arbitrary key-level data>
-```
 
-`name` is the unique identifier of this specific key.
-It defaults to a `<row>_<column>` format, but can be overridden if necessary.
-`shift` and `rotate` declare an extra, key-level translation or rotation, respectively.
-Then we leave `padding` amount of vertical space before moving on to the next key in the column.
-`skip` signals that the point is just a "helper" and should not be included in the output.
-This can happen when a _real_ point is more easily calculable through a "stepping stone", but then we don't actually want the stepping stone to be a key itself.
-Finally, `asym` and `mirror` relate to mirroring, which we'll cover in a second.
 
-<hr />
 
-Since `zones` was only a single key within the `points` section, it's reasonable to expect something more.
-Indeed:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## Adjustments
+
+Once we're done with zone-specific definitions, we can adjust the individual zones as a whole, or even all the zones collectively.
+The corresponding config sections look something like this:
 
 ```yaml
 points:
-    zones: <what we talked about so far...>
-    key: <global key def>
-    rotate: num # default = 0
-    mirror:
-        axis: num # default = 0
-        ref: <point reference> # and other anchor-level settings
-        distance: num # default = 0
+  zones:
+    zone_name:
+      rotate: <number> # zone-level rotation
+      mirror: <axis> # zone-level mirror
+  rotate: <number> # global rotation
+  mirror: <axis> # global mirror
 ```
+
+### Rotation
+
+- zone level
+- global level
 
 Here, `rotate` can apply a global angle to all the points, which can simulate the inter-half angle of one-piece boards.
 
-## `mirror`
+### Mirroring
+
+- axis parsing
+- zone level
+- global level
+
 Then comes the mirroring step, where the generator automatically copies and mirrors each point.
 If there's an `axis` set within the `mirror` key, points will be mirrored according to that.
 If not, the axis will be calculated so that there will be exactly `distance` mms between the `ref`erenced point and its duplicate.
@@ -561,3 +623,8 @@ It will use the same extension mechanism as it did for the 5 levels before.
 
 And this concludes point definitions.
 This should be generic enough to describe any ergo layout, yet easy enough so that you'll appreciate not having to work in raw CAD.
+
+### Examples
+
+
+
