@@ -166,9 +166,11 @@ anchor:
 
 </TabItem>
 <TabItem value="visualization" label="Visualization">
+<div style={{textAlign: 'center'}}>
 
 ![Basic anchor example](./assets/anchor_basic.png)
 
+</div>
 </TabItem>
 </Tabs>
 
@@ -203,9 +205,11 @@ anchor:
 
 </TabItem>
 <TabItem value="visualization" label="Visualization">
+<div style={{textAlign: 'center'}}>
 
 ![Follow-the-dots anchor example](./assets/anchor_follow.png)
 
+</div>
 </TabItem>
 </Tabs>
 
@@ -237,9 +241,11 @@ anchor:
 
 </TabItem>
 <TabItem value="visualization" label="Visualization">
+<div style={{textAlign: 'center'}}>
 
 ![Anchor averaging example](./assets/anchor_average.png)
 
+</div>
 </TabItem>
 </Tabs>
 
@@ -270,9 +276,11 @@ anchor:
 
 </TabItem>
 <TabItem value="visualization" label="Visualization">
+<div style={{textAlign: 'center'}}>
 
 ![Anchor affect example](./assets/anchor_affect.png)
 
+</div>
 </TabItem>
 </Tabs>
 
@@ -318,9 +326,11 @@ anchor_3:
 
 </TabItem>
 <TabItem value="visualization" label="Visualization">
+<div style={{textAlign: 'center'}}>
 
 ![Anchor resist example](./assets/anchor_resist.png)
 
+</div>
 </TabItem>
 </Tabs>
 
@@ -526,29 +536,264 @@ This is how `{{col.name}}_{{row}}` automatically expands to something like `pink
 
 ### Layout
 
-### `rows`
-Let's start with rows.
-`zone.rows` can give an overall picture about how many rows we'll have, and set key-related options on a per-row basis.
-But what if we want to extend this initial picture with some column-specific details?
-For example, we want an outer pinky column where padding is tighter than it is for the others.
-That's where `column.rows` can help, specifying a row "extension" for just that column.
+Based on the above settings, let's see how Ergogen actually lays out the `matrix` zone of this example config:
 
-And what if we want to **override** the zone-level declarations in a certain column?
-For example, we don't just want to modify a row's attributes for a given column, but actually override the amount of rows there are.
-Like an outer pinky column with just two keys instead of the regular three.
-That's where `column.row_overrides` can help, specifying a row-level override that disregards the zone-level defaults.
-Easy.
+<Tabs>
+<TabItem value="config" label="Config" default>
+
+```yaml
+points.zones.matrix:
+  # we skew left a bit by default
+  anchor.rotate: 5
+  columns:
+    pinky:
+    ring.key:
+      # inter-column splay resets subsequent columns to "upright"
+      splay: -5
+      stagger: 12
+      # hinge at the bottom left corner of the key
+      origin: [-u/2, -u/2]
+    middle.key.stagger: 5
+    index.key.stagger: -6
+    inner.key.stagger: -2
+  rows:
+    bottom:
+    home:
+    top:
+```
+
+</TabItem>
+<TabItem value="1" label="1">
+<div style={{textAlign: 'center'}}>
+
+![Zone layout - step 1](./assets/layout_1.png)
+
+</div>
+
+**Step 1**: We determine the starting point of the zone based on its `anchor` attribute.
+In this case, only a 5° rotation was specified, so our initial mark is at `[0, 0, 5°]`.
+This blue point is going to be our running "column anchor", where each column will start building from.
+Since `spread` doesn't apply to the first column of any zone, and there's no `stagger` or `splay` given, we can start iterating over the zone's columns.
+
+</TabItem>
+<TabItem value="2" label="2">
+<div style={{textAlign: 'center'}}>
+
+![Zone layout - step 2](./assets/layout_2.png)
+
+</div>
+
+**Step 2**: To start actually laying out the first ("pinky") column, we copy the current column anchor to a running "row anchor" (marked red).
+Note that this is where key-level `orient`/`shift`/`rotate` would take effect, if any were specified.
+
+</TabItem>
+<TabItem value="3" label="3">
+<div style={{textAlign: 'center'}}>
+
+![Zone layout - step 3](./assets/layout_3.png)
+
+</div>
+
+**Step 3**: When a row anchor is finalized, a key is laid out there &ndash; shown here by 18mm by 18mm squares, representing regular keycaps.
+It's worth emphasizing that the keys we're generating here are always defined as the *middle points* of these visualization squares.
+They're *not* the squares themselves, as we don't always necessarily want to put rectangles at these locations.
+
+</TabItem>
+<TabItem value="4" label="4">
+<div style={{textAlign: 'center'}}>
+
+![Zone layout - step 4](./assets/layout_4.png)
+
+</div>
+
+**Step 4**: Now that the first key of the column is fixed, we add `padding` to figure out where the next row should go.
+
+</TabItem><TabItem value="5" label="5">
+<div style={{textAlign: 'center'}}>
+
+![Zone layout - step 5](./assets/layout_5.png)
+
+</div>
+
+**Step 5**: And we keep doing this until we run out of rows in the current column &ndash; cumulatively, always adding `padding` (and potential `orient`/`shift`/`rotate` modifiers) to get to the next location.
+
+</TabItem>
+<TabItem value="6" label="6">
+<div style={{textAlign: 'center'}}>
+
+![Zone layout - step 6](./assets/layout_6.png)
+
+</div>
+
+**Step 6**: Once the current column is done, we move on to the next column by applying `spread` (to move horizontally) and `stagger` (to move vertically).
+Note that the column anchor is still "skewed" at the original 5° rotation.
+
+</TabItem>
+<TabItem value="7" label="7">
+<div style={{textAlign: 'center'}}>
+
+![Zone layout - step 7](./assets/layout_7.png)
+
+</div>
+
+**Step 7**: After `spread`ing and `stagger`ing, inter-column `splay` is applied &ndash; again, cumulatively.
+By default, `splay`ing happens "around" the point itself, so it doesn't affect its x/y position, only its rotation.
+But we can change this with an optional `origin` to rotate around.
+In this case, it's used so that the column hinges around the first key's bottom left corner (so that the rotation doesn't accidentally make that exact corner overlap the first column, as it would during sufficient rotation around the key's center).
+Note that this `splay` takes us back to 0° (upright) rotation.
+
+</TabItem>
+<TabItem value="8" label="8">
+<div style={{textAlign: 'center'}}>
+
+![Zone layout - step 8](./assets/layout_8.png)
+
+</div>
+
+**Step 8**: From this new column anchor, we can repeat the same in-column process we saw before: copy it to a running row anchor, and create the column's relevant rows one by one, leaving `padding` in between stops.
+
+</TabItem>
+<TabItem value="9" label="9">
+<div style={{textAlign: 'center'}}>
+
+![Zone layout - step 9](./assets/layout_9.png)
+
+</div>
+
+**Step 9**: And now steps 6-7-8, again.
+We create the new column anchor by `spread`ing/`stagger`ing/`splay`ing the old one, and lay out the next column, row by row.
+
+</TabItem>
+<TabItem value="10" label="10">
+<div style={{textAlign: 'center'}}>
+
+![Zone layout - step 10](./assets/layout_10.png)
+
+</div>
+
+**Step 10**: Same old, same old, only now the `stagger` value is negative.
+
+</TabItem>
+<TabItem value="11" label="11">
+<div style={{textAlign: 'center'}}>
+
+![Zone layout - step 11](./assets/layout_11.png)
+
+</div>
+
+**Step 11**: Once more for the inner column, and we're done with this zone.
+
+</TabItem>
+</Tabs>
+
+<hr/>
 
 
 
-- columns, row-by-row
-  - cumulative
-- zones, column-by-column
+Once we have an existing zone (`matrix`), we can anchor further zones to it &ndash; like, say, a thumbfan.
+
+<Tabs>
+<TabItem value="config" label="Config" default>
+
+```yaml
+
+```
+
+</TabItem>
+<TabItem value="1" label="1">
+<div style={{textAlign: 'center'}}>
+
+<!-- ![Thumbfan - step 1](./assets/thumbfan_1.png) -->
+
+</div>
+
+**Step 1**: 
+
+</TabItem>
+</Tabs>
+
+<hr/>
+
+
 
 
 
 ### Examples
 
+<details><summary>Choc spacing</summary>
+<p>
+
+arst neio
+
+<Tabs>
+<TabItem value="config" label="Config" default>
+
+```yaml
+
+```
+
+</TabItem>
+<TabItem value="visualization" label="Visualization">
+<div style={{textAlign: 'center'}}>
+
+<!-- ![name](./assets/file.png) -->
+
+</div>
+</TabItem>
+</Tabs>
+
+</p>
+</details>
+
+<details><summary>Row overrides</summary>
+<p>
+
+arst neio
+
+<Tabs>
+<TabItem value="config" label="Config" default>
+
+```yaml
+
+```
+
+</TabItem>
+<TabItem value="visualization" label="Visualization">
+<div style={{textAlign: 'center'}}>
+
+<!-- ![name](./assets/file.png) -->
+
+</div>
+</TabItem>
+</Tabs>
+
+</p>
+</details>
+
+<details><summary>Column arcs</summary>
+<p>
+
+arst neio
+
+<Tabs>
+<TabItem value="config" label="Config" default>
+
+```yaml
+
+```
+
+</TabItem>
+<TabItem value="visualization" label="Visualization">
+<div style={{textAlign: 'center'}}>
+
+<!-- ![name](./assets/file.png) -->
+
+</div>
+</TabItem>
+</Tabs>
+
+</p>
+</details>
 
 
 
@@ -624,7 +869,84 @@ It will use the same extension mechanism as it did for the 5 levels before.
 And this concludes point definitions.
 This should be generic enough to describe any ergo layout, yet easy enough so that you'll appreciate not having to work in raw CAD.
 
+
+
+
+
+
 ### Examples
 
+<details><summary>Zone-level adjustment</summary>
+<p>
 
+arst neio
 
+<Tabs>
+<TabItem value="config" label="Config" default>
+
+```yaml
+
+```
+
+</TabItem>
+<TabItem value="visualization" label="Visualization">
+<div style={{textAlign: 'center'}}>
+
+<!-- ![name](./assets/file.png) -->
+
+</div>
+</TabItem>
+</Tabs>
+
+</p>
+</details>
+
+<details><summary>Post-adjustment zones</summary>
+<p>
+
+arst neio
+
+<Tabs>
+<TabItem value="config" label="Config" default>
+
+```yaml
+
+```
+
+</TabItem>
+<TabItem value="visualization" label="Visualization">
+<div style={{textAlign: 'center'}}>
+
+<!-- ![name](./assets/file.png) -->
+
+</div>
+</TabItem>
+</Tabs>
+
+</p>
+</details>
+
+<details><summary>Asymmetry</summary>
+<p>
+
+arst neio
+
+<Tabs>
+<TabItem value="config" label="Config" default>
+
+```yaml
+
+```
+
+</TabItem>
+<TabItem value="visualization" label="Visualization">
+<div style={{textAlign: 'center'}}>
+
+<!-- ![name](./assets/file.png) -->
+
+</div>
+</TabItem>
+</Tabs>
+
+</p>
+</details>
