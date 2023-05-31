@@ -20,23 +20,30 @@ We'll get back to how an individual part looks soon &ndash; but first, we need t
 
 ## Binding
 
-While the points are enough to create properly positioned and rotated rectangles (with parametric side lengths), they usually won't combine into a contiguous shape since there won't be any overlap.
-So the first part of the outline generation is "binding", where we make the individual switch holes _bind_ to each other.
+While the points are enough to place properly positioned and rotated shapes (most commonly, rectangles, representing the keys of the board), these usually won't combine into a contiguous shape since there won't be any overlap.
+So the first part of outline generation is thinking about "binding", where we can make the individual switch holes reach out towards (or, _bind_ to) each other.
+Think of this as a kind of "neighbor declaration", telling Ergogen which directions to grow towards (and by how much) to reach the next-door point.
 
+Of course, overlap could be achieved by placing larger shapes at each of the points, causing them to overlap by default, but since everything is placed by its center point, these larger shapes would result in larger outside margins as well.
+With bind, we can declare the selective directions in which to grow the shapes placed, so that their final combination can become contiguous, yet with as little (or as much) margin as we might want.
 
 ### Explicit
 
-We use a key-level declarations for this:
+The fully customizable way to add binding to points is through the key-level attribute `bind`:
 
 ```yaml
-bind: num | [num_x, num_y] | [num_t, num_r, num_b, num_l] # default = 0
+bind: num | [num_x, num_y] | [num_t, num_r, num_b, num_l] # defer to autobind by default
 ```
 
-Again, key-level declaration means that both of these should be specified in the `points` section, benefiting from the same extension process every key-level setting does.
-This field declares how much we want to bind in each direction, i.e., the amount of overlap we want to make sure that we can reach the neighbor (`num` applies to all directions, `num_x` horizontally, `num_y` vertically, and the t/r/b/l versions to top/right/bottom/left, respectively).
-Note that it might make sense to have negative `bind` values, in case we not only don't want to bind in the given direction, but also don't want to "cover up" a potential corner rounding or bevel (see below).
+To recap, key-level declaration means that `bind` should be specified in the `points` section, benefiting from the same extension process every key-level attribute does.
+Valid values follow CSS standards, so `num` applies to all directions, `num_x` horizontally, `num_y` vertically, and the `t`/`r`/`b`/`l` versions to top/right/bottom/left, respectively.
 
 ### Automatic
+
+To spare us the `bind` declaration whenever possible, Ergogen offers an `autobind` key-level attribute as well.
+Its value is a single number (`10` by default), and the relevant directions are calculated automatically (by looking at intra- and inter-column bounding boxes).
+Basically, if we want bound shapes, we only need to say so (by setting `bound: true`, see [below](#common-attributes)) in most cases &ndash; or specify a larger `autobind` value once if `10` wasn't enough to bridge the gaps.
+And if autobinding fails for a more complex shape, we can always fall back to explicit `bind` declarations.
 
 ### Examples
 
@@ -44,9 +51,30 @@ Note that it might make sense to have negative `bind` values, in case we not onl
 
 ## Filtering
 
-### Basic
+Filtering is how Ergogen decides which points to use when placing the shape we're currently placing.
+After all, the points section might contain lots of zones, multiple *kinds* of points, helpers for mounting holes or one-off PCB footprints, etc.
+So being able to easily select a subset of these points can come in handy.
 
-### Advanced
+### Basics
+
+First up, let's see what a filter means depending on what datatype we use when declaring it:
+
+- **`undefined`**: if left empty, a filter produces the default `[0, 0, 0°]` origin point.
+
+- **boolean**: if the filter is `true` all points are returned; if it's `false` no points are returned.
+
+- **string**: represents a single/simple filter &ndash; the workings of which we'll discuss in a second.
+
+- **object**, or **array that contains an object** somewhere: will be parsed as an [anchor](./points.md#anchors), returning the single resulting point.
+
+  :::note
+  Although there can be valid anchor declarations that are neither objects, nor arrays containing an object at any depth, these are not supported where filters are expected because Ergogen would have no way to decide what it's looking at.
+  Remember, however, that every anchor **can** be represented in full object form &ndash; any other representation is just a shorthand for convenience.
+  :::
+
+- **array containing no objects** at any depth: complex filter, see [Advanced usage](#advanced-usage).
+
+### Advanced usage
 
 ### Examples
 
