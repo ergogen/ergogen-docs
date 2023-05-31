@@ -840,34 +840,48 @@ points:
   mirror: <axis> # global mirror
 ```
 
+
+
 ### Rotation
 
-- zone level
-- global level
+In this context, `rotate` can apply an angle to all relevant points, most often used to simulate the inter-half angle of one-piece boards.
+If specified at the zone level, it applies to the points of that zone only &ndash; if specified globally, it applies to all points.
 
-Here, `rotate` can apply a global angle to all the points, which can simulate the inter-half angle of one-piece boards.
+The origin of the rotation is always assumed to be `[0, 0]`.
+This doesn't matter for global rotations, but should be considered for zone-level ones.
+
+
 
 ### Mirroring
 
-- axis parsing
-- zone level
-- global level
+At this stage, all "original" points are declared and positioned.
+And since the default direction in Ergogen is left-to-right, this usually means the left side of the board.
+But there's usually two sides to a board, so to save us the work of replicating everything on the right, Ergogen offers a way to mirror "source" points automatically along an axis.
 
-Then comes the mirroring step, where the generator automatically copies and mirrors each point.
-If there's an `axis` set within the `mirror` key, points will be mirrored according to that.
-If not, the axis will be calculated so that there will be exactly `distance` mms between the `ref`erenced point and its duplicate.
+If the `mirror` field is a number, it will be used as the x coordinate of the axis to mirror along.
+Otherwise, it's going to be treated as an anchor with an additional `distance` field, where the anchor defines an arbitrary reference point and `distance` defines how far away it should be from its eventual mirror image.
+
+As with rotation, mirroring can be applied to individual zones, or all of them simultaneously at the end, depending on which of the above two `mirror` declarations we use.
+
+:::caution
+The `mirror` field can have different meanings depending on its location in the config.
+As we just saw, `points.mirror` and `points.zones.<zone_name>.mirror` are for declaring what points should be mirrored to the other side and along what axis.
+These are not to be confused with the key-level `mirror` attribute (appearing at any of the 6 levels we've discussed for [inheritance](#inheritance)), which provides a way to override any other key-level attribute for mirrored versions of points.
+:::
 
 Now if our design is symmetric, we're done.
-Otherwise, we need to use the `asym` key-level attribute to indicate which side the key should appear on.
-If it's set as `left`, mirroring will simply skip this key.
-If it's `right`, mirroring will "move" the point instead of copying it.
-The default `both` assumes symmetry.
+Otherwise, we need to use the `asym` key-level attribute to indicate which side any given point should appear on.
+If it's set as `source`, mirroring will simply skip this key, as it should only be present on the source side, as it was declared.
+If the `asym` field is set as `clone`, mirroring will "move" the point instead of copying it, because it should only appear on the mirrored side.
+The default value of `both` assumes symmetry &ndash; so the given point should appear on both sides of the board.
 
-Using the _key-level_ `mirror` key (not to be confused with the global `mirror` setting we just discussed above), we can set additional data for the mirrored version of the key.
-It will use the same extension mechanism as it did for the 5 levels before.
+:::tip
+The `source`/`clone` pair was chosen to replace the old `left`/`right` as the canonical options for the `asym` field so as not to make any hardcoded assumptions about the spatial relationships between original and mirrored positions.
+But as aliases, `origin`/`image`, `base`/`derived`, `primary`/`seconday` and even the old `left`/`right` pairs are also supported, so feel free to use whichever makes most sense to you.
+:::
 
 And this concludes point definitions.
-This should be generic enough to describe any ergo layout, yet easy enough so that you'll appreciate not having to work in raw CAD.
+This should be generic enough to describe any ergo layout, yet hopefully easy enough so that you'll appreciate not having to work in raw CAD.
 
 
 
@@ -930,6 +944,7 @@ arst neio
 <p>
 
 arst neio
+- don't forget a key-level mirror example here, too
 
 <Tabs>
 <TabItem value="config" label="Config" default>

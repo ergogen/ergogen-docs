@@ -24,14 +24,14 @@
      inkscape:document-units="mm"
      showgrid="false"
      inkscape:zoom="0.51775388"
-     inkscape:cx="1512.3016"
-     inkscape:cy="243.35887"
+     inkscape:cx="1548.0328"
+     inkscape:cy="341.86127"
      inkscape:window-width="1920"
      inkscape:window-height="1080"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
-     inkscape:current-layer="g114292-2-72"
+     inkscape:current-layer="svg868"
      inkscape:snap-bbox="true"
      inkscape:snap-bbox-midpoints="true"
      showguides="true"
@@ -169,12 +169,15 @@
      id="g64357"
      transform="translate(-1.3017964,-94.238271)">
     <rect
-       style="fill:#fefefe;stroke:#ff822f;stroke-width:0.968;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none"
+       style="fill:#fefefe;stroke:none;stroke-width:0.968;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none"
        id="rect1556-9"
        width="103.20827"
        height="80.41436"
        x="240.65123"
-       y="116.11219" />
+       y="116.11219"
+       inkscape:export-filename="/home/zealot/zed/ergogen-docs/docs/assets/layout_4.png"
+       inkscape:export-xdpi="147.66258"
+       inkscape:export-ydpi="147.66258" />
     <path
        style="font-size:12px;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.5;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none"
        d="m 250.21456,156.86903 15.48935,-1.35449 1.35534,15.48934 -15.48934,1.35535 z"
@@ -248,9 +251,12 @@
   </g>
   <g
      id="g64357-7"
-     transform="translate(278.03018,-200.15744)">
+     transform="translate(278.03018,-200.15744)"
+     inkscape:export-filename="/home/zealot/zed/ergogen-docs/docs/assets/layout_3.png"
+     inkscape:export-xdpi="147.66258"
+     inkscape:export-ydpi="147.66258">
     <rect
-       style="fill:#fefefe;stroke:#ff822f;stroke-width:0.968;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none"
+       style="fill:#fefefe;stroke:none;stroke-width:0.968;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none"
        id="rect1556-9-6"
        width="103.20827"
        height="80.41436"
@@ -365,20 +371,26 @@
        y="36.891403" />
   </g>
   <g
-     id="g30192">
+     id="g30192"
+     inkscape:export-filename="/home/zealot/zed/ergogen-docs/docs/assets/layout_1.png"
+     inkscape:export-xdpi="147.66258"
+     inkscape:export-ydpi="147.66258">
     <rect
-       style="fill:#fefefe;stroke:#ff822f;stroke-width:0.968;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none"
+       style="fill:#fefefe;stroke:none;stroke-width:0.968;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none"
        id="rect1556"
        width="103.20827"
        height="80.41436"
        x="238.86543"
-       y="-84.045242" />
+       y="-84.045242"
+       inkscape:export-filename="/home/zealot/zed/ergogen-docs/docs/assets/layout_1.png"
+       inkscape:export-xdpi="172.27"
+       inkscape:export-ydpi="172.27" />
     <g
        id="g1241-1-02"
        transform="matrix(-0.04707817,-0.46678885,0.46678885,-0.04707817,243.97119,12.7361)"
-       inkscape:export-filename="/home/zealot/zed/ergogen-docs/docs/assets/anchor_average.png"
-       inkscape:export-xdpi="104.9274"
-       inkscape:export-ydpi="104.9274"
+       inkscape:export-filename="/home/zealot/zed/ergogen-docs/docs/assets/layout_1.png"
+       inkscape:export-xdpi="172.27"
+       inkscape:export-ydpi="172.27"
        inkscape:transform-center-x="0.030188839"
        inkscape:transform-center-y="-0.52648992"
        style="fill:#fefefe;fill-opacity:1;stroke:#0589de;stroke-opacity:1">
@@ -401,7 +413,10 @@
        style="font-size:7.05556px;line-height:1.25;font-family:'Moon 2.0';-inkscape-font-specification:'Moon 2.0, ';letter-spacing:0.341312px;stroke-width:0.264583"
        x="298.8605"
        y="-17.222267"
-       id="text11734"><tspan
+       id="text11734"
+       inkscape:export-filename="/home/zealot/zed/ergogen-docs/docs/assets/layout_1.png"
+       inkscape:export-xdpi="172.27"
+       inkscape:export-ydpi="172.27"><tspan
          sodipodi:role="line"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;text-anchor:middle;stroke-width:0.264583"
          x="299.03116"
@@ -410,20 +425,26 @@
   </g>
   <g
      id="g30192-9"
-     transform="translate(142.76165,0.48399639)">
+     transform="translate(142.76165,0.48399639)"
+     inkscape:export-filename="/home/zealot/zed/ergogen-docs/docs/assets/layout_2.png"
+     inkscape:export-xdpi="147.66258"
+     inkscape:export-ydpi="147.66258">
     <rect
-       style="fill:#fefefe;stroke:#ff822f;stroke-width:0.968;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none"
+       style="fill:#fefefe;stroke:none;stroke-width:0.968;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none"
        id="rect1556-0"
        width="103.20827"
        height="80.41436"
        x="238.86543"
-       y="-84.045242" />
+       y="-84.045242"
+       inkscape:export-filename="/home/zealot/zed/ergogen-docs/docs/assets/layout_2.png"
+       inkscape:export-xdpi="172.27296"
+       inkscape:export-ydpi="172.27296" />
     <g
        id="g1241-1-02-98"
        transform="matrix(-0.04707817,-0.46678885,0.46678885,-0.04707817,243.97119,12.7361)"
-       inkscape:export-filename="/home/zealot/zed/ergogen-docs/docs/assets/anchor_average.png"
-       inkscape:export-xdpi="104.9274"
-       inkscape:export-ydpi="104.9274"
+       inkscape:export-filename="/home/zealot/zed/ergogen-docs/docs/assets/layout_2.png"
+       inkscape:export-xdpi="172.27296"
+       inkscape:export-ydpi="172.27296"
        inkscape:transform-center-x="0.030188839"
        inkscape:transform-center-y="-0.52648992"
        style="fill:#fefefe;fill-opacity:1;stroke:#ff2626;stroke-opacity:1">
@@ -446,7 +467,10 @@
        style="font-size:7.05556px;line-height:1.25;font-family:'Moon 2.0';-inkscape-font-specification:'Moon 2.0, ';letter-spacing:0.341312px;stroke-width:0.264583"
        x="289.4512"
        y="-17.333313"
-       id="text11734-3"><tspan
+       id="text11734-3"
+       inkscape:export-filename="/home/zealot/zed/ergogen-docs/docs/assets/layout_2.png"
+       inkscape:export-xdpi="172.27296"
+       inkscape:export-ydpi="172.27296"><tspan
          sodipodi:role="line"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;text-anchor:middle;stroke-width:0.264583"
          x="289.62186"
@@ -457,12 +481,15 @@
      id="g114292"
      transform="translate(142.76165,-264.82079)">
     <rect
-       style="fill:#fefefe;stroke:#ff822f;stroke-width:0.968;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none"
+       style="fill:#fefefe;stroke:none;stroke-width:0.968;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none"
        id="rect1556-9-0"
        width="103.20827"
        height="80.41436"
        x="238.86543"
-       y="287.17871" />
+       y="287.17871"
+       inkscape:export-filename="/home/zealot/zed/ergogen-docs/docs/assets/layout_5.png"
+       inkscape:export-xdpi="147.66258"
+       inkscape:export-ydpi="147.66258" />
     <path
        style="font-size:12px;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.5;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none"
        d="m 248.42876,327.93556 15.48935,-1.35449 1.35534,15.48934 -15.48934,1.35535 z"
@@ -634,9 +661,12 @@
   </g>
   <g
      id="g114292-2-72"
-     transform="translate(142.27765,-62.376692)">
+     transform="translate(142.27765,-62.376692)"
+     inkscape:export-filename="/home/zealot/zed/ergogen-docs/docs/assets/layout_11.png"
+     inkscape:export-xdpi="147.66258"
+     inkscape:export-ydpi="147.66258">
     <rect
-       style="fill:#fefefe;stroke:#ff822f;stroke-width:0.968;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none"
+       style="fill:#fefefe;stroke:none;stroke-width:0.968;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none"
        id="rect1556-9-0-5-5"
        width="103.20827"
        height="80.41436"
@@ -803,9 +833,12 @@
   </g>
   <g
      id="g114292-2-0"
-     transform="translate(6.8525559e-7,-62.376692)">
+     transform="translate(6.8525559e-7,-62.376692)"
+     inkscape:export-filename="/home/zealot/zed/ergogen-docs/docs/assets/layout_10.png"
+     inkscape:export-xdpi="147.66258"
+     inkscape:export-ydpi="147.66258">
     <rect
-       style="fill:#fefefe;stroke:#ff822f;stroke-width:0.968;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none"
+       style="fill:#fefefe;stroke:none;stroke-width:0.968;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none"
        id="rect1556-9-0-5-30"
        width="103.20827"
        height="80.41436"
@@ -960,9 +993,12 @@
   </g>
   <g
      id="g114292-2-7"
-     transform="translate(280.29997,-162.5649)">
+     transform="translate(280.29997,-162.5649)"
+     inkscape:export-filename="/home/zealot/zed/ergogen-docs/docs/assets/layout_9.png"
+     inkscape:export-xdpi="147.66258"
+     inkscape:export-ydpi="147.66258">
     <rect
-       style="fill:#fefefe;stroke:#ff822f;stroke-width:0.968;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none"
+       style="fill:#fefefe;stroke:none;stroke-width:0.968;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none"
        id="rect1556-9-0-5-9"
        width="103.20827"
        height="80.41436"
@@ -1120,9 +1156,12 @@
   </g>
   <g
      id="g114292-2-1"
-     transform="translate(142.76165,-162.5649)">
+     transform="translate(142.76165,-162.5649)"
+     inkscape:export-filename="/home/zealot/zed/ergogen-docs/docs/assets/layout_8.png"
+     inkscape:export-xdpi="147.66258"
+     inkscape:export-ydpi="147.66258">
     <rect
-       style="fill:#fefefe;stroke:#ff822f;stroke-width:0.968;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none"
+       style="fill:#fefefe;stroke:none;stroke-width:0.968;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none"
        id="rect1556-9-0-5-3"
        width="103.20827"
        height="80.41436"
@@ -1285,14 +1324,20 @@
   </g>
   <g
      id="g114292-2-8"
-     transform="translate(279.81597,-265.30479)">
+     transform="translate(279.81597,-265.30479)"
+     inkscape:export-filename="/home/zealot/zed/ergogen-docs/docs/assets/layout_6.png"
+     inkscape:export-xdpi="147.66258"
+     inkscape:export-ydpi="147.66258">
     <rect
-       style="fill:#fefefe;stroke:#ff822f;stroke-width:0.968;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none"
+       style="fill:#fefefe;stroke:none;stroke-width:0.968;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none"
        id="rect1556-9-0-5-1"
        width="103.20827"
        height="80.41436"
        x="238.86543"
-       y="287.17871" />
+       y="287.17871"
+       inkscape:export-filename="/home/zealot/zed/ergogen-docs/docs/assets/layout_6.png"
+       inkscape:export-xdpi="147.66258"
+       inkscape:export-ydpi="147.66258" />
     <path
        style="font-size:12px;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.5;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none"
        d="m 248.42876,327.93556 15.48935,-1.35449 1.35534,15.48934 -15.48934,1.35535 z"
@@ -1391,14 +1436,20 @@
   </g>
   <g
      id="g114292-2-8-8"
-     transform="translate(0.48400068,-162.5649)">
+     transform="translate(0.48400068,-162.5649)"
+     inkscape:export-filename="/home/zealot/zed/ergogen-docs/docs/assets/layout_7.png"
+     inkscape:export-xdpi="147.66258"
+     inkscape:export-ydpi="147.66258">
     <rect
-       style="fill:#fefefe;stroke:#ff822f;stroke-width:0.968;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none"
+       style="fill:#fefefe;stroke:none;stroke-width:0.968;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none"
        id="rect1556-9-0-5-1-9"
        width="103.20827"
        height="80.41436"
        x="238.86543"
-       y="287.17871" />
+       y="287.17871"
+       inkscape:export-filename="/home/zealot/zed/ergogen-docs/docs/assets/layout_7.png"
+       inkscape:export-xdpi="147.50848"
+       inkscape:export-ydpi="147.50848" />
     <text
        xml:space="preserve"
        style="font-size:7.05556px;line-height:1;font-family:'Moon 2.0';-inkscape-font-specification:'Moon 2.0, ';letter-spacing:0.264583px;stroke-width:0.264583"
