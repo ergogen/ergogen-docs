@@ -7,6 +7,8 @@ import TabItem from '@theme/TabItem';
 
 # Points
 
+## Overview
+
 A point in this context refers to a 2D point `[x,y]` with a rotation/orientation `r` and some extra metadata added in.
 These can be thought of as the middle points of the keycaps in a resulting keyboard layout, with the additional handling of the angle of the keycap, plus, again, some metadata (like names, row/column information, custom variables, etc.).
 
@@ -387,17 +389,17 @@ A full zone declaration looks something like this (in the context of the whole c
 ```yaml
 points:
   zones:
-    my_zone_name: # A unique key for each zone
+    <zone_name>: # A unique key for each zone
       anchor: # Optional anchor to position the zone, default = [0, 0, 0°]
       columns: 
-        first_column: # A unique key for each column within the zone
+        <column_name>: # A unique key for each column within the zone
           rows:
-            row_name: <defs> # Key-level attributes set here apply to this key alone
+            <row_name>: <defs> # Key-level attributes set here apply to this key alone
             ...
           key: <defs> # Key-level attributes set here apply to the whole column
         ...
       rows:
-        row_name: <defs> # Key-level attributes set here apply to the whole row
+        <row_name>: <defs> # Key-level attributes set here apply to the whole row
         ...
       key: <defs> # Key-level attributes set here apply to the whole zone
     ...
