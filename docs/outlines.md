@@ -38,6 +38,12 @@ bind: num | [num_x, num_y] | [num_t, num_r, num_b, num_l] # defer to autobind by
 To recap, key-level declaration means that `bind` should be specified in the `points` section, benefiting from the same extension process every key-level attribute does.
 Valid values follow CSS standards, so `num` applies to all directions, `num_x` horizontally, `num_y` vertically, and the `t`/`r`/`b`/`l` versions to top/right/bottom/left, respectively.
 
+:::tip
+Don't recall seeing `bind` in the [Keys](./points.md#keys) section, where supposedly all key-level attributes were listed?
+That's because those were only the ones with meaning to the layout system.
+Apart from those, *anything* can be declared as a key-level attribute, and some might gain meaning in later stages, like `bind` did just now.
+:::
+
 ### Automatic
 
 To spare us the `bind` declaration whenever possible, Ergogen offers an `autobind` key-level attribute as well.
@@ -46,6 +52,9 @@ Basically, if we want bound shapes, we only need to say so (by setting `bound: t
 And if autobinding fails for a more complex shape, we can always fall back to explicit `bind` declarations.
 
 ### Examples
+
+- explicit bind and how it's smaller than just placing larger tiles
+- autobind explanation/illustration
 
 
 
@@ -61,7 +70,7 @@ First up, let's see what a filter means depending on what datatype we use when d
 
 - **`undefined`**: if left empty, a filter produces the default `[0, 0, 0°]` origin point.
 
-- **boolean**: if the filter is `true` all points are returned; if it's `false` no points are returned.
+- **boolean**: if the filter is `true`, all points are used; if it's `false`, no points are used.
 
 - **string**: represents a single/simple filter &ndash; the workings of which we'll discuss in a second.
 
@@ -74,10 +83,58 @@ First up, let's see what a filter means depending on what datatype we use when d
 
 - **array containing no objects** at any depth: complex filter, see [Advanced usage](#advanced-usage).
 
+So the undefined and boolean cases are easy, objects just redirect to anchors, and arrays are more advanced.
+What about strings, then?
+
+At their simplest, strings just compare the given value against the name of each key and check for straight equality.
+Since names are unique, this makes it easy to single out a point, but not more. How do we get "real" subsets?
+
+Enter the `tags` key-level attribute.
+It can be either an array (containing string tags, or "labels" that should apply to the given point), or an object (in which case the keys from its key/value pairs count).
+Arrays are probably more readable, while objects might be more easily extendable via inheritance or preprocessing.
+Use whichever form makes sense.
+
+:::tip
+`tags` is yet another key-level attribute that gains meaning during outlining only, like `bind` did above.
+:::
+
+By default, string filters consider not only the name of each key but their tags, too.
+And combining their basic exact matching behavior with a non-unique field leads to easy subset selection. Yay!
+
+But wait, there's more!
+If the string is surrounded by `/`s (slashes), it's interpreted as a regex, and exact matching changes to pattern matching.
+So we might not even *need* tags for, say, differentiating zones because we know that key names by default are formatted as `zone_column_row` so we can just say something like `/^matrix_.*/` to filter any key whose name starts with the substring `matrix_`.
+The usual regex flags are also supported if specified after the trailing slash, so feel free to use case-insensitive, multiline, or even unicode expressions should the need arise.
+
+Finally, if it would be easier to select what we **don't** want instead of what we **do** want, filters support negation if prefixed by a `-` (minus).
+So while saying `matrix_pinky_home` select only that one key, `-matrix_pinky_home` selects everything *except* that key.
+This also works with both tags and regexes, of course, so `-alpha` selects everything that isn't tagged with `alpha` (assuming the existence of an alpha tag), and `-/pinky/` selects keys where the "pinky" substring *isn't* found anywhere within the name or any of its tags.
+
+
+
 ### Advanced usage
+
+Every single filter actually consists of three components:
+
+1. **which** key-level attributes to check against,
+2. **how** to check against them, and
+3. **what** value to check against them.
+
+So far, we've only used the third component, as the **which** part was always the default `name` and `tags`, while the **how** part was interpreted as the special "similarity" operator, handling both exact matches and regexes.
+But what if we want to check against some other key-level attribute; or check in a different way?
+
+Enter full form filters.
+In the background, writing `something` gets translated as `meta.name,meta.tags ~ something`, where `meta` is each key's metadata containing all key-level attributes (see [Keys](./points.md#keys)) and `~` is the similarity operator.
+
+arrays
 
 ### Examples
 
+- tag
+- regex
+- negated regex
+- full form against other metadata
+- combination
 
 
 

@@ -456,7 +456,7 @@ Lastly, if `key = {a: 1}` is extended by `key = {a: $unset, b: 2}`, the result i
 
 ### Keys
 
-Keys can contain any metadata as attributes (which may become useful later down the line), but only a handful has meaning to Ergogen itself.
+Keys can contain any metadata as attributes (which may become useful later down the line), but only a handful has meaning when laying out positions.
 These are the following:
 
 - **`stagger`**:
@@ -533,7 +533,114 @@ Basic **templating** is supported to make reusing existing key-level attributes 
 Anything within double curly braces (`{{` and `}}`) inside a string is interpreted as a reference to, and is replaced by the key-level attribute of the same name.
 This is how `{{col.name}}_{{row}}` automatically expands to something like `pinky_home` in the case of `colrow`, or how `{{zone.name}}_{{colrow}}` expands to something like `keywell_pinky_home` in the case of `name`.
 
+For example, a simple one point config (**1**) creates the following internal representation with all key-level attributes filled out (**2**) &ndash; and of course, specifying custom key-level attributes in a config (**3**) reflects in the metadata as well (**4**):
 
+<Tabs>
+<TabItem value="config1" label="Simple Config (1)" default>
+
+```yaml
+points.zones.matrix:
+```
+
+</TabItem>
+<TabItem value="metadata2" label="Simple Metadata (2)">
+
+```json
+"matrix": {
+  "x": 0,
+  "y": 0,
+  "r": 0,
+  "meta": {
+    "stagger": 0,
+    "spread": 19,
+    "splay": 0,
+    "origin": [0, 0],
+    "orient": 0,
+    "shift": [0, 0],
+    "rotate": 0,
+    "adjust": {},
+    "width": 18,
+    "height": 18,
+    "padding": 19,
+    "autobind": 10,
+    "skip": false,
+    "asym": "both",
+    "colrow": "default_default",
+    "name": "matrix",
+    "zone": {
+      "name": "matrix"
+    },
+    "col": {
+      "rows": {},
+      "key": {},
+      "name": "default"
+    },
+    "row": "default",
+    "bind": [0, 0, 0, 0]
+  }
+}
+```
+
+</TabItem>
+<TabItem value="config3" label="Custom Config (3)">
+
+```yaml
+points.zones.matrix.key:
+  foo: bar
+  answer: 42
+```
+
+</TabItem>
+<TabItem value="metadata4" label="Custom Metadata (4)">
+
+```json
+"matrix": {
+  "x": 0,
+  "y": 0,
+  "r": 0,
+  "meta": {
+    "stagger": 0,
+    "spread": 19,
+    "splay": 0,
+    "origin": [0, 0],
+    "orient": 0,
+    "shift": [0, 0],
+    "rotate": 0,
+    "adjust": {},
+    "width": 18,
+    "height": 18,
+    "padding": 19,
+    "autobind": 10,
+    "skip": false,
+    "asym": "both",
+    "colrow": "default_default",
+    "name": "matrix",
+    // highlight-start
+    "foo": "bar",
+    "answer": 42,
+    // highlight-end
+    "zone": {
+      // highlight-start
+      "key": {
+        "foo": "bar",
+        "answer": 42
+      },
+      // highlight-end
+      "name": "matrix"
+    },
+    "col": {
+      "rows": {},
+      "key": {},
+      "name": "default"
+    },
+    "row": "default",
+    "bind": [0, 0, 0, 0],
+  }
+}
+```
+
+</TabItem>
+</Tabs>
 
 
 ### Layout
