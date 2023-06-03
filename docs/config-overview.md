@@ -9,15 +9,16 @@ If you prefer JSON over YAML, feel free to use it, conversion is trivial and the
 The important thing is that the data can contain the following keys:
 
 ```yaml
-points: <points config...> # required
 units: <units config...> # optional
+variables: <variables config...> # optional
+points: <points config...> # required
 outlines: <outline config...> #optional
 cases: <case config...> #optional
 pcbs: <pcb config...> #optional
 ```
 
-### [`units`](units)
-Allows users to set additional units which can be used in the rest of your config
+### [`units` and `variables`](units)
+Allows users to set additional units and variables which can be used in the rest of your config
 
 ### [`points`](points)
 Describes the core of the layout: the positions of the keys.
