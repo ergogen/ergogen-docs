@@ -18,6 +18,15 @@ We'll get back to how an individual part looks soon &ndash; but first, we need t
 
 
 
+
+
+
+
+
+
+
+
+
 ## Binding
 
 While the points are enough to place properly positioned and rotated shapes (most commonly, rectangles, representing the keys of the board), these usually won't combine into a contiguous shape since there won't be any overlap.
@@ -53,8 +62,72 @@ And if autobinding fails for a more complex shape, we can always fall back to ex
 
 ### Examples
 
-- explicit bind and how it's smaller than just placing larger tiles
-- autobind explanation/illustration
+<details><summary>Explicit bind</summary>
+<p>
+
+explicit bind and how it's smaller than just placing larger tiles
+
+<Tabs>
+<TabItem value="config" label="Config" default>
+
+```yaml
+
+```
+
+</TabItem>
+<TabItem value="visualization" label="Visualization">
+<div style={{textAlign: 'center'}}>
+
+<!-- ![name](./assets/file.png) -->
+
+</div>
+</TabItem>
+</Tabs>
+
+</p>
+</details>
+
+
+
+
+
+
+<details><summary>Autobind</summary>
+<p>
+
+autobind explanation/illustration
+
+<Tabs>
+<TabItem value="config" label="Config" default>
+
+```yaml
+
+```
+
+</TabItem>
+<TabItem value="visualization" label="Visualization">
+<div style={{textAlign: 'center'}}>
+
+<!-- ![name](./assets/file.png) -->
+
+</div>
+</TabItem>
+</Tabs>
+
+</p>
+</details>
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -87,7 +160,7 @@ So the undefined and boolean cases are easy, objects just redirect to anchors, a
 What about strings, then?
 
 At their simplest, strings just compare the given value against the name of each key and check for straight equality.
-Since names are unique, this makes it easy to single out a point, but not more. How do we get "real" subsets?
+Since names are unique, this makes it easy to single out a point, but nothing more. How do we get "real" subsets?
 
 Enter the `tags` key-level attribute.
 It can be either an array (containing string tags, or "labels" that should apply to the given point), or an object (in which case the keys from its key/value pairs count).
@@ -125,16 +198,147 @@ But what if we want to check against some other key-level attribute; or check in
 
 Enter full form filters.
 In the background, writing `something` gets translated as `meta.name,meta.tags ~ something`, where `meta` is each key's metadata containing all key-level attributes (see [Keys](./points.md#keys)) and `~` is the similarity operator.
+So if we want to check against something else (say, we declared our own `foobar` field among the other key-level attributes), then we can simply say `meta.foobar ~ something`.
+As for operators, only similarity (`~`) is implemented for now, but others (such as mathematical relations) will be added in the future.
 
-arrays
+For even more advanced usage, we can combine simple filters with AND/OR logical relations into complex filters using arrays.
+Odd levels of array nesting represent OR, while even levels represent AND.
+So, for example, writing `[something, other]` would mean that all points are returned where either `something` **OR** `other` matches the name/tags, while `[[something, other]]` would only return points where both `something` **AND** `other` matches (note the double arrays in the latter case).
 
 ### Examples
 
-- tag
-- regex
-- negated regex
-- full form against other metadata
-- combination
+<details><summary>Tags</summary>
+<p>
+
+<Tabs>
+<TabItem value="config" label="Config" default>
+
+```yaml
+
+```
+
+</TabItem>
+<TabItem value="visualization" label="Visualization">
+<div style={{textAlign: 'center'}}>
+
+<!-- ![name](./assets/file.png) -->
+
+</div>
+</TabItem>
+</Tabs>
+
+</p>
+</details>
+
+
+
+
+<details><summary>Regexes</summary>
+<p>
+
+<Tabs>
+<TabItem value="config" label="Config" default>
+
+```yaml
+
+```
+
+</TabItem>
+<TabItem value="visualization" label="Visualization">
+<div style={{textAlign: 'center'}}>
+
+<!-- ![name](./assets/file.png) -->
+
+</div>
+</TabItem>
+</Tabs>
+
+</p>
+</details>
+
+
+
+
+<details><summary>Negation</summary>
+<p>
+
+<Tabs>
+<TabItem value="config" label="Config" default>
+
+```yaml
+
+```
+
+</TabItem>
+<TabItem value="visualization" label="Visualization">
+<div style={{textAlign: 'center'}}>
+
+<!-- ![name](./assets/file.png) -->
+
+</div>
+</TabItem>
+</Tabs>
+
+</p>
+</details>
+
+
+
+
+<details><summary>Full filters</summary>
+<p>
+
+<Tabs>
+<TabItem value="config" label="Config" default>
+
+```yaml
+
+```
+
+</TabItem>
+<TabItem value="visualization" label="Visualization">
+<div style={{textAlign: 'center'}}>
+
+<!-- ![name](./assets/file.png) -->
+
+</div>
+</TabItem>
+</Tabs>
+
+</p>
+</details>
+
+
+
+
+<details><summary>Combination</summary>
+<p>
+
+<Tabs>
+<TabItem value="config" label="Config" default>
+
+```yaml
+
+```
+
+</TabItem>
+<TabItem value="visualization" label="Visualization">
+<div style={{textAlign: 'center'}}>
+
+<!-- ![name](./assets/file.png) -->
+
+</div>
+</TabItem>
+</Tabs>
+
+</p>
+</details>
+
+
+
+
+
+
 
 
 
@@ -176,32 +380,82 @@ Objects might be beneficial if part names are important for config readability (
 Use whichever form makes more sense.
 :::
 
+Operations are performed in order, and the resulting shape is exported as an output.
+Additionally, it is going to be available for further outline declarations to use (through the `outline` type, see below) under the name specified (`<outline_name>`, in this case).
+
 Now let's see how those `<part>`s are made.
 
 
 
 ### Common attributes
 
-what
-where
-operation
-bound
-asym
-adjust
-fillet
-expand
-joints
-scale
+Each part has the following common attributes:
 
-Operations are performed in order, and the resulting shape is exported as an output.
-Additionally, it is going to be available for further export declarations to use (through the `outline` type) under the name specified (`my_name`, in this case).
+- **`what`**: declares *what* shape we want to place &ndash; see [Shapes](#shapes).
+
+- **`where`**: declares *where* we want to place those shapes &ndash; this is where we can use the previously discussed filters.
+
+- **`operation`**: indicates how we want the current part to combine with the cumulative result of previous parts.
+Options include:
+
+  - **`add`**: produces an union &ndash; this is the default operation.
+  - **`subtract`**: subtracts this part from the in-progress result.
+  - **`intersect`**: computes the intersection of this part and the in-progress result.
+  - **`stack`**: just draws the current part "on top of" the in-progress result (possibly crossing lines instead of calculating unions).
+
+    :::tip
+    `stack` can be used as a computationally "cheaper" `subtract` in some cases, but it's mostly for being able to visualize individual parts in the context of other parts and getting a sense of what happens (i.e., debugging).
+    :::
+
+- **`bound`**: boolean value, representing whether we want to activate binding on the shapes or not.
+If `false`, the shapes are placed as-is.
+If `true`, the corresponding binding rectangles are added to each relevant side of each shape and the results union'ed.
+
+- **`asym`**: the field is a companion to the `where` filter and represents how filtering should treat mirrored points.
+The same values are available that we've discussed in the [Mirroring](./points.md#mirroring) section &ndash; the canonical choices are `source`/`clone`/`both`.
+
+  - The default `source` only returns the points matched by the filter.
+
+  - `clone` returns only the mirrored versions of the points that would be matched by the filter.
+
+  - `both` returns both the regular matches and their mirror images.
+
+    :::caution
+    If the filter translates to an anchor, this check is ***strict*** &ndash; meaning that Ergogen will error out if the mirror image doesn't exist.
+    On the other hand, the mirror check is permissive for regular filters, including them if they exist and ignoring the cases where they don't.
+    :::
+
+- **`adjust`**: a relative anchor by which to adjust the position of each shape &ndash; similarly to the key-level `adjust` attribute.
+
+  :::tip
+  This field makes it possible to place shapes not only **at** certain filtered points, but also **below** or **next to** those points.
+  :::
+
+- **`scale`**: an optional multiplier by which to scale the resulting shape.
+
+- **`expand`**:
+
+- **`joints`**:
+
+- **`fillet`**: this number (if greater than the default zero) triggers a filleting operation on the (almost-)completed part and rounds its corners with the given radius.
+  If the radius is larger than either of the corner's neighboring line segments, that corner is skipped.
+
+  :::tip
+  Once a corner is filleted, it won't be filleted again, so it's safe to apply a `fillet` with increasingly smaller radii to catch every sharp corner if desired.
+  :::
+
+Shapes can have other, shape-specific attributes as well, but (as the name might suggest) those depend on the shape &ndash; see below.
 
 
 
 
 ### Shapes
 
-rect/circle/poly/outline
+- rect (size/corner/bevel)
+circle (radius)
+poly (points)
+outline (name/origin)
+
 shape-specific units
 
 - `keys` : the combined outline that we've just created. Its parameters include:
@@ -261,41 +515,27 @@ operation: intersect
 
 ### Examples
 
+<details><summary>Tags</summary>
+<p>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<Tabs>
+<TabItem value="config" label="Config" default>
 
 ```yaml
-what:
-where:
-operation:
-
 
 ```
 
+</TabItem>
+<TabItem value="visualization" label="Visualization">
+<div style={{textAlign: 'center'}}>
 
+<!-- ![name](./assets/file.png) -->
 
+</div>
+</TabItem>
+</Tabs>
 
-
-
-
-
-
+</p>
+</details>
 
 

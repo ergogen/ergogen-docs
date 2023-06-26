@@ -480,6 +480,9 @@ These are the following:
   And indeed, they do behave very similarly &ndash; only they are interpreted **cumulatively** within a column.
   The current key `orients` (default = `0`), `shifts` (default = `[0, 0]`), and rotates (default = `0`), and in doing so, not only positions itself, but provides the starting point for the *next* row within the column (to which the above `padding` can be applied).
 
+- **`adjust`**:
+  This field is also used to adjust individual points &ndash; but, as opposed to the above trio, it's parsed as an actual anchor, and it applies **independently**, affecting only the current key and not the cumulative column layout.
+
 - **`bind`**:
   Represents the amount of directional "reach" each key has when it tries to bind with its neighbors to form a contiguous shape.
   For a more in-depth explanation, check the [outlines section](./outlines.md).
