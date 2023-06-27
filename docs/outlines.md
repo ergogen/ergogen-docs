@@ -412,7 +412,7 @@ If `false`, the shapes are placed as-is.
 If `true`, the corresponding binding rectangles are added to each relevant side of each shape and the results union'ed.
 
 - **`asym`**: the field is a companion to the `where` filter and represents how filtering should treat mirrored points.
-The same values are available that we've discussed in the [Mirroring](./points.md#mirroring) section &ndash; the canonical choices are `source`/`clone`/`both`.
+  The same values are available that we've discussed in the [Mirroring](./points.md#mirroring) section &ndash; the canonical choices are `source`/`clone`/`both`.
 
   - The default `source` only returns the points matched by the filter.
 
@@ -432,10 +432,17 @@ The same values are available that we've discussed in the [Mirroring](./points.m
   :::
 
 - **`scale`**: an optional multiplier by which to scale the resulting shape.
+  The default is `1` for no scaling.
 
-- **`expand`**:
+- **`expand`**: a number in mm's by which to expand (or shrink, if the number is negative) the current outline.
+  Differs from `scale`ing because it draws and external (or internal) "outline" for the starting shape, thereby usually changing the shape itself, too, not just its size.
+  For more info, see the relevant [Maker.JS docs](https://maker.js.org/docs/advanced-drawing/#Expanding%20paths).
 
-- **`joints`**:
+- **`joints`**: a companion to `expand`, specifying which type of treatment to apply to the joints during expansion/shrinking.
+
+  - `0` or `round` means the corners will be rounded (thereby having **zero** joints);
+  - `1` or `pointy` means the corners will stay (thereby still having **one** joint); and
+  - `2` or `beveled` means the corners will get beveled (thereby having **two** joints).
 
 - **`fillet`**: this number (if greater than the default zero) triggers a filleting operation on the (almost-)completed part and rounds its corners with the given radius.
   If the radius is larger than either of the corner's neighboring line segments, that corner is skipped.
@@ -444,42 +451,64 @@ The same values are available that we've discussed in the [Mirroring](./points.m
   Once a corner is filleted, it won't be filleted again, so it's safe to apply a `fillet` with increasingly smaller radii to catch every sharp corner if desired.
   :::
 
-Shapes can have other, shape-specific attributes as well, but (as the name might suggest) those depend on the shape &ndash; see below.
 
 
 
 
 ### Shapes
 
-- rect (size/corner/bevel)
-circle (radius)
-poly (points)
-outline (name/origin)
+Shapes can have their own, shape-specific attributes on top of the ones already discussed above.
+Additionally, each shape can introduce shape-specific units to the evaluation context to further avoid repetition.
 
-shape-specific units
+:::tip
+Say we'd want to express that a rectangle of size `10` should be adjusted half of its width to the right.
+We could write `adjust.shift: [5, 0]`, of course, but then if the size changes, the shift needs to change as well.
+Instead, we could write `adjust.shift: [.5 sx, 0]`, referencing the size's x value (i.e., its width).
+:::
 
-- `keys` : the combined outline that we've just created. Its parameters include:
-    - `side: left | right | middle | both | glue` : the part we want to use
-        - `left` and `right` are just the appropriate side of the laid out keys, without the glue.
-        - `middle` means an "ideal" version of the glue (meaning that instead of the `outline.glue` we defined above, we get `both` - `left` - `right`, so the _exact_ middle piece we would have needed to glue everything together
-        - `both` means both sides, held together by the glue
-        - `glue` is just the raw glue shape we defined above under `outline.glue`
-    - `tag: <array of tags>` : optional tags to filter which points to consider in this step, where tags can be specified as key-level attributes.
-    - `glue: <glue_name>` : the name of the glue to use, if applicable
-    - `size: num | [num_x, num_y]` : the width/height of the rectangles to lay onto the points. Note that these values are added to the evaluation context as the variables `sx` and `sy`. So during a `keys` layout with a size of 18, for example, a relative shift of `[.5 sx, .5 sy]` actually means `[9, 9]` in mms.
-    - `corner: num # default = 0)` : corner radius of the rectangles
-    - `bevel: num # default = 0)` : corner bevel of the rectangles, can be combined with rounding
-    - `bound: boolean # default = true` : whether to use the binding declared previously
-- `rectangle` : an independent rectangle primitive. Parameters:
-    - `ref`, `rotate`, and `shift`, etc. (the usual anchor settings)
-    - `size`, `corner` and `bevel`, just like for `keys`
-- `circle` : an independent circle primitive. Parameters:
-    - `ref`, `rotate`, and `shift`, etc. (the usual anchor settings)
-    - `radius: num` : the radius of the circle
-- `polygon` : an independent polygon primitive. Parameters:
-    - `points: [<anchor>, ...]` : the points of the polygon. Each `<anchor>` can have its own `ref`, `shift`, etc. (all of which are still the same as above). The only difference here is that if a `ref` is unspecified, the previous point will be assumed (as in a continuous chain). For the first, it's `[0, 0]` by default.
-- `outline` : a previously defined outline, see below.
-    - `name: outline_name` : the name of the referenced outline
+With this, let's see a list of what actual shapes we can place, what extra attributes they have, and what extra units they introduce:
+
+- **`rectangle`**: A basic rectangle primitive.
+
+  - **`size`**: Either a number or an array in the form `[num_x, num_y]`, representing the width/height of the rectangle(s) to place. If it's a single number `num`, it's interpreted as `[num, num]` (i.e., a square). Mandatory. Introduces `sx` and `sy` as units for width and height, respectively.
+
+  - **`bevel`**: Optional beveling for the rectangles, default is `0`.
+  
+  - **`corner`**: Optional corner radius for the rectangles, default is `0`.
+
+    :::caution
+    `size` represents the final size of the resulting rectangle, so any `bevel` or `corner` values are subtracted from it appropriately to make room for the bevels/radii.
+    This can lead to an error if the size is too small (or the `bevel`/`corner` values are too large).
+    :::
+
+    :::tip
+    Corners and bevels can be used simultaneously.
+    Corner radii are applied after beveling, leading to rounded bevels.
+    :::
+
+- **`circle`**: A basic circle primitive.
+
+  - **`radius`**: The radius of the circle to place. Mandatory. Introduces `r` as a unit.
+
+- **`poly`**: A custom polygon.
+
+  - **`points`**: Mandatory array of anchors, representing the points of the polygon.
+    Each item of the array is a regular anchor &ndash; the only difference is that if its `ref` is unspecified, the polygon's previous point will be assumed (to simulate a continuous chain).
+    For the first point, `[0, 0, 0°]` is assumed to be the starting point by default (as the polygon will be placed using a `[0, 0]` origin anyway).
+  
+- **`outline`**: Allows reuse of an already existing outline as a primitive for further outlines.
+
+  - **`name`**: The name to identify the outline to place. Mandatory.
+
+  - **`origin`**: An optional anchor to specify which point in the existing outline to consider as the origin (i.e., the location of the outline by which it's placed at the requested points during outlining).
+
+    :::tip
+    `origin` is functionally identical to the globally available `adjust`, only it applies before placing each outline at the target points while `adjust` applies afterwards.
+    Both options are available for flexibility, feel free to use either (or both in conjunction, if appropriate).
+    :::
+
+
+
 
 
 
