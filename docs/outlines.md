@@ -518,22 +518,34 @@ With this, let's see a list of what actual shapes we can place, what extra attri
 
 ### Syntactic sugar
 
-string shorthand
-expand shorthand
-"private" outlines
+At this point, we're done with actual outline functionality, but there are some extra shorthands and conveniences worth mentioning.
 
-If we only want to use it as a building block for further exports, we can start the name with an underscore (e.g., `_my_name`) to prevent it from being actually exported.
-(By convention, a starting underscore is kind of like a "private" marker.)
-
-A shorthand version of a part can be given when the elements of the above arrays/objects are simple strings instead of further objects.
-The syntax is a symbol from `[+, -, ~, ^]`, followed by a name, and is equivalent to adding/subtracting/intersecting/stacking an outline of that name, respectively.
+The first kind are `string shorthands`, where a part within an outline is given by a single string instead of a whole object.
+This is a streamlined way to refer to already existing outlines and combine them further.
+The format of this string should start with a symbol from `[+, -, ~, ^]`, followed by a name, and is equivalent to adding/subtracting/intersecting/stacking an outline of that name, respectively.
 More specifically, `~something` is equivalent to:
 
 ```yaml
-type: outline
+what: outline
+where: undefined # meaning [0, 0, 0°], so just placing the outline where it is
 name: something
 operation: intersect
 ```
+
+If the symbol prefix is missing, addition is assumed &ndash; so simply naming outlines as parts works, too.
+
+Another minor shorthand is declaring the `expand` and `joints` fields all at once using just the `expand` field, and specifying its value as the number for the expansion, followed by either `)`, `>`, or `]` (representing `round`, `pointy`, and `beveled` joints, respectively).
+So an `expand` value of `3]` would translate to:
+
+```yaml
+expand: 3
+joints: beveled
+```
+
+Finally, "private" outlines: if we only want to use an outline as a building block for further outlines, we can start its name with an underscore (e.g., `_my_name`) to prevent it from being actually exported.
+(By convention, a starting underscore is kind of like a "private" marker.)
+
+
 
 
 
@@ -544,7 +556,30 @@ operation: intersect
 
 ### Examples
 
-<details><summary>Tags</summary>
+<details><summary>Shapes</summary>
+<p>
+
+<Tabs>
+<TabItem value="config" label="Config" default>
+
+```yaml
+
+```
+
+</TabItem>
+<TabItem value="visualization" label="Visualization">
+<div style={{textAlign: 'center'}}>
+
+<!-- ![name](./assets/file.png) -->
+
+</div>
+</TabItem>
+</Tabs>
+
+</p>
+</details>
+
+<details><summary>Boolean operations</summary>
 <p>
 
 <Tabs>
@@ -568,3 +603,48 @@ operation: intersect
 </details>
 
 
+<details><summary>Asymmetry</summary>
+<p>
+
+<Tabs>
+<TabItem value="config" label="Config" default>
+
+```yaml
+
+```
+
+</TabItem>
+<TabItem value="visualization" label="Visualization">
+<div style={{textAlign: 'center'}}>
+
+<!-- ![name](./assets/file.png) -->
+
+</div>
+</TabItem>
+</Tabs>
+
+</p>
+</details>
+
+<details><summary>Adjustments</summary>
+<p>
+
+<Tabs>
+<TabItem value="config" label="Config" default>
+
+```yaml
+
+```
+
+</TabItem>
+<TabItem value="visualization" label="Visualization">
+<div style={{textAlign: 'center'}}>
+
+<!-- ![name](./assets/file.png) -->
+
+</div>
+</TabItem>
+</Tabs>
+
+</p>
+</details>

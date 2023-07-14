@@ -4,7 +4,9 @@ sidebar_position: 8
 
 # PCBs
 
-Everything should be ready for a handwire, but if you'd like the design to be more accessible and easily replicable, you probably want a PCB as well.
+TODO -> PCB illustration
+
+Everything should be ready for a handwire, but if you'd like the design to be more accessible to, and easily replicable by others, you might want to design a PCB as well.
 To help you get started, the necessary footprints and an edge cut can be automatically positioned so that all you need to do manually is the routing.
 
 Footprints can be specified at the key-level (under the `points` section, like we discussed above), or here with manually given anchors.
