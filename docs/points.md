@@ -26,7 +26,7 @@ Points are an important part of keyboard creation as they can later be used to p
 But thing would get pretty tedious if we had to lay out each point manually, and downright horrific if any kind of trigonometry came into play!
 So Ergogen tries to do as much of the heavy lifting as it can while providing more comfortable declaration alternatives.
 
-
+<br />
 
 
 
@@ -339,7 +339,7 @@ anchor_3:
 </p>
 </details>
 
-
+<br />
 
 
 
@@ -907,7 +907,7 @@ arst neio
 </p>
 </details>
 
-
+<br />
 
 
 

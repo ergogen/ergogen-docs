@@ -4,12 +4,14 @@ sidebar_position: 7
 
 # Cases
 
+## Overview
+
 TODO -> outline to case illustration
 
 Cases add a pretty basic and minimal 3D aspect to the generation process.
 In this phase, we take different outlines (defined in the previous section, even the "private" ones), extrude and position them in space, and combine them into one 3D-printable object.
 That's it.
-Declarations might look like this:
+Declarations might look something like the following:
 
 ```yaml
 cases:
@@ -29,6 +31,11 @@ cases:
         - ...
     ...
 ```
+
+:::note
+Individual case parts can be both arrays or objects, just like with outline parts previously.
+Use whichever is more convenient.
+:::
 
 When the `what` is `outline`, `name` specifies which outline to import onto the xy plane, while `extrude` specifies how much it should be extruded along the z axis.
 When the `what` is `case`, `name` specifies which previously defined case to use.

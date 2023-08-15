@@ -15,7 +15,7 @@ Once the raw points are available, we often want to turn them into solid, contin
 We do this by selecting an arbitrary subset of points and placing shapes there to form a part, and then use boolean operations (i.e., addition, subtraction, or intersection) to combine parts into a final outline to export.
 We'll get back to how an individual part looks soon &ndash; but first, we need to get familiar with binding and filtering.
 
-
+<br />
 
 
 
@@ -117,7 +117,7 @@ autobind explanation/illustration
 </p>
 </details>
 
-
+<br />
 
 
 
@@ -334,7 +334,7 @@ So, for example, writing `[something, other]` would mean that all points are ret
 </p>
 </details>
 
-
+<br />
 
 
 
